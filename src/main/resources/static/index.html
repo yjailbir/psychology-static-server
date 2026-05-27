@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цифровой ресурс — Первая психологическая помощь</title>
+
+    <!-- Подключаем шрифт Inter с кириллицей -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            /* Основная цветовая палитра — спокойные синие тона */
+            --deep-blue: #1a3550;
+            --dark-blue: #1e3d5c;
+            --medium-blue: #2c5a82;
+            --primary-blue: #3e709e;
+            --soft-blue: #5b8db8;
+            --light-blue: #a3c5e0;
+            --pale-blue: #d6e7f5;
+            --bg-blue: #edf3f8;
+            --bg-hero: #e3edf6;
+            --card-bg: #ffffff;
+            --text-dark: #152433;
+            --text-medium: #3a4f63;
+            --text-light: #5f7389;
+            --text-muted: #8899ae;
+            --accent-gold: #c9a96e;
+            --accent-soft: #e8dccf;
+            --footer-bg: #0f2435;
+            --footer-text: #b0c5d8;
+            --border-subtle: #dce7f0;
+            --shadow-sm: 0 1px 3px rgba(21, 36, 51, 0.06), 0 1px 2px rgba(21, 36, 51, 0.04);
+            --shadow-md: 0 4px 16px rgba(21, 36, 51, 0.07), 0 2px 6px rgba(21, 36, 51, 0.05);
+            --shadow-lg: 0 12px 32px rgba(21, 36, 51, 0.10), 0 4px 10px rgba(21, 36, 51, 0.06);
+            --shadow-xl: 0 20px 48px rgba(21, 36, 51, 0.13), 0 6px 16px rgba(21, 36, 51, 0.07);
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 20px;
+            --radius-xl: 24px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: var(--bg-blue);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* ==================== HEADER ==================== */
+        .header {
+            background: var(--deep-blue);
+            padding: 0 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(15, 36, 53, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .header__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 68px;
+            gap: 14px;
+        }
+
+        .header__icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 20px;
+            color: #c9ddf0;
+        }
+
+        .header__title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .header__subtitle {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 400;
+            color: #a3c0db;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: 1px;
+        }
+
+        /* ==================== HERO ==================== */
+        .hero {
+            background: linear-gradient(175deg, #e0ecf7 0%, #edf3f8 30%, #f2f6fa 60%, #f7f9fb 100%);
+            padding: 56px 24px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Декоративные плавающие круги */
+        .hero__decor {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.35;
+        }
+        .hero__decor--1 {
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, #c8ddf2 0%, transparent 70%);
+            top: -60px;
+            left: -40px;
+            animation: floatDecor 12s ease-in-out infinite;
+        }
+        .hero__decor--2 {
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle, #d4e5f5 0%, transparent 70%);
+            bottom: -30px;
+            right: -20px;
+            animation: floatDecor 15s ease-in-out infinite reverse;
+        }
+        .hero__decor--3 {
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #bfd6ed 0%, transparent 70%);
+            top: 40%;
+            right: 8%;
+            animation: floatDecor 10s ease-in-out infinite 2s;
+        }
+
+        @keyframes floatDecor {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(18px, -14px) scale(1.06);
+            }
+            50% {
+                transform: translate(-10px, -22px) scale(0.94);
+            }
+            75% {
+                transform: translate(-16px, 10px) scale(1.04);
+            }
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero__badge {
+            display: inline-block;
+            background: rgba(62, 112, 158, 0.09);
+            color: var(--medium-blue);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            padding: 7px 18px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(62, 112, 158, 0.15);
+        }
+
+        .hero__title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+            line-height: 1.25;
+        }
+
+        .hero__description {
+            font-size: 1.08rem;
+            color: var(--text-medium);
+            max-width: 520px;
+            margin: 0 auto 10px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* ==================== MODULES SECTION ==================== */
+        .modules-section {
+            flex: 1;
+            padding: 40px 24px 60px;
+            max-width: 1160px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .modules-section__label {
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .modules-section__heading {
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            margin-bottom: 36px;
+            letter-spacing: -0.2px;
+        }
+
+        .modules-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            justify-content: center;
+        }
+
+        /* Карточка модуля */
+        .module-card {
+            flex: 1 1 320px;
+            max-width: 370px;
+            min-width: 280px;
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 28px 26px 24px;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-subtle);
+            transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 4px 4px 0 0;
+            transition: height var(--transition-slow), opacity var(--transition);
+            opacity: 0.7;
+        }
+
+        /* Разные оттенки синего для верхней полоски каждого модуля */
+        .module-card--1::before {
+            background: #5b9cc9;
+        }
+        .module-card--2::before {
+            background: #4d8ab8;
+        }
+        .module-card--3::before {
+            background: #6aa3cc;
+        }
+        .module-card--4::before {
+            background: #3f7aa8;
+        }
+        .module-card--5::before {
+            background: #568eb5;
+        }
+
+        .module-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+            border-color: #cddbe8;
+        }
+        .module-card:hover::before {
+            height: 6px;
+            opacity: 1;
+        }
+
+        .module-card:focus-visible {
+            outline: 3px solid var(--primary-blue);
+            outline-offset: 3px;
+            border-radius: var(--radius-lg);
+        }
+
+        .module-card__icon-wrap {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 16px;
+            flex-shrink: 0;
+            transition: transform var(--transition), background var(--transition);
+        }
+
+        .module-card:hover .module-card__icon-wrap {
+            transform: scale(1.08);
+        }
+
+        /* Иконки — разные оттенки фона */
+        .module-card--1 .module-card__icon-wrap {
+            background: #e6f0f8;
+            color: #3e7aab;
+        }
+        .module-card--2 .module-card__icon-wrap {
+            background: #e3edf5;
+            color: #3b6f9e;
+        }
+        .module-card--3 .module-card__icon-wrap {
+            background: #e9f2f9;
+            color: #4a82b0;
+        }
+        .module-card--4 .module-card__icon-wrap {
+            background: #dce9f3;
+            color: #356594;
+        }
+        .module-card--5 .module-card__icon-wrap {
+            background: #e4eef6;
+            color: #4278a5;
+        }
+
+        .module-card__number {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .module-card__title {
+            font-size: 1.18rem;
+            font-weight: 650;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+            line-height: 1.35;
+            letter-spacing: -0.1px;
+        }
+
+        .module-card__desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.55;
+            margin-bottom: 14px;
+            flex: 1;
+        }
+
+        .module-card__arrow {
+            align-self: flex-start;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            transition: gap var(--transition), color var(--transition);
+        }
+
+        .module-card__arrow i {
+            font-size: 0.8rem;
+            transition: transform var(--transition);
+        }
+
+        .module-card:hover .module-card__arrow {
+            gap: 11px;
+            color: var(--medium-blue);
+        }
+        .module-card:hover .module-card__arrow i {
+            transform: translateX(3px);
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: var(--footer-bg);
+            padding: 32px 24px 28px;
+            color: var(--footer-text);
+        }
+
+        .footer__inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .footer__block {
+            flex: 1 1 220px;
+            min-width: 200px;
+        }
+
+        .footer__label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #7b95b0;
+            margin-bottom: 8px;
+        }
+
+        .footer__phone {
+            display: block;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #d4e1ef;
+            text-decoration: none;
+            letter-spacing: 0.2px;
+            transition: color 0.25s;
+            line-height: 1.6;
+        }
+        .footer__phone:hover {
+            color: #ffffff;
+        }
+        .footer__phone i {
+            margin-right: 7px;
+            color: #6b8fab;
+            font-size: 0.85rem;
+        }
+
+        .footer__bottom {
+            text-align: center;
+            margin-top: 22px;
+            font-size: 0.78rem;
+            color: #5e7a94;
+            letter-spacing: 0.3px;
+        }
+
+        /* ==================== АНИМАЦИЯ ПОЯВЛЕНИЯ ==================== */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Задержки для карточек */
+        .module-card:nth-child(1) {
+            transition-delay: 0s;
+        }
+        .module-card:nth-child(2) {
+            transition-delay: 0.08s;
+        }
+        .module-card:nth-child(3) {
+            transition-delay: 0.16s;
+        }
+        .module-card:nth-child(4) {
+            transition-delay: 0.24s;
+        }
+        .module-card:nth-child(5) {
+            transition-delay: 0.32s;
+        }
+
+        /* ==================== АДАПТИВНОСТЬ ==================== */
+        @media (max-width: 900px) {
+            .hero__title {
+                font-size: 1.9rem;
+            }
+            .hero__description {
+                font-size: 0.98rem;
+            }
+            .modules-section__heading {
+                font-size: 1.45rem;
+            }
+            .module-card {
+                flex: 1 1 280px;
+                max-width: 100%;
+                padding: 22px 20px 20px;
+            }
+            .module-card__title {
+                font-size: 1.05rem;
+            }
+            .header__title {
+                font-size: 1.1rem;
+            }
+            .header__subtitle {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header__inner {
+                height: 56px;
+                gap: 10px;
+            }
+            .header__icon {
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
+            }
+            .header__title {
+                font-size: 0.95rem;
+            }
+            .header__subtitle {
+                font-size: 0.66rem;
+            }
+            .hero {
+                padding: 36px 18px 32px;
+            }
+            .hero__title {
+                font-size: 1.55rem;
+            }
+            .hero__description {
+                font-size: 0.9rem;
+            }
+            .hero__badge {
+                font-size: 0.7rem;
+                padding: 5px 14px;
+            }
+            .modules-section {
+                padding: 28px 14px 40px;
+            }
+            .modules-section__heading {
+                font-size: 1.25rem;
+                margin-bottom: 22px;
+            }
+            .modules-grid {
+                gap: 14px;
+            }
+            .module-card {
+                flex: 1 1 100%;
+                max-width: 100%;
+                min-width: auto;
+                padding: 18px 16px 16px;
+                border-radius: var(--radius-md);
+            }
+            .module-card__icon-wrap {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+            .module-card__title {
+                font-size: 1rem;
+            }
+            .module-card__desc {
+                font-size: 0.82rem;
+            }
+            .module-card__arrow {
+                font-size: 0.8rem;
+            }
+            .footer__inner {
+                flex-direction: column;
+                align-items: center;
+                gap: 18px;
+            }
+            .footer__block {
+                flex: unset;
+                width: 100%;
+            }
+            .footer__phone {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero__title {
+                font-size: 1.3rem;
+            }
+            .header__title {
+                font-size: 0.85rem;
+            }
+            .header__subtitle {
+                font-size: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__icon" aria-hidden="true">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <div>
+                <span class="header__title">Первая психологическая помощь</span>
+                <span class="header__subtitle">Цифровой образовательный ресурс</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+        <div class="hero__decor hero__decor--1" aria-hidden="true"></div>
+        <div class="hero__decor hero__decor--2" aria-hidden="true"></div>
+        <div class="hero__decor hero__decor--3" aria-hidden="true"></div>
+        <div class="hero__content">
+            <span class="hero__badge">📘 Обучение</span>
+            <h1 class="hero__title">Цифровой ресурс для обучения основам первой психологической помощи</h1>
+            <p class="hero__description">
+                Пять модулей, которые помогут вам научиться&nbsp;распознавать эмоциональные трудности,
+                оказывать поддержку близким и&nbsp;заботиться о&nbsp;собственном благополучии.
+            </p>
+        </div>
+    </section>
+
+    <!-- ==================== MODULES ==================== -->
+    <main class="modules-section">
+        <p class="modules-section__label">Выберите модуль</p>
+        <h2 class="modules-section__heading">Учебные модули</h2>
+        <div class="modules-grid" id="modulesGrid">
+
+            <!-- Модуль 1 -->
+            <a href="module_1.html" class="module-card module-card--1 fade-in-up" aria-label="Модуль 1: Твоя безопасность и обращение за помощью">
+                <div class="module-card__icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <span class="module-card__number">Модуль 1</span>
+                <h3 class="module-card__title">Твоя безопасность и обращение за помощью</h3>
+                <p class="module-card__desc">Как обеспечить личную безопасность, распознать кризисную ситуацию и найти надёжные источники поддержки.</p>
+                <span class="module-card__arrow">Перейти к модулю <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- Модуль 2 -->
+            <a href="module_2.html" class="module-card module-card--2 fade-in-up" aria-label="Модуль 2: Понимание эмоций и стресса">
+                <div class="module-card__icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <span class="module-card__number">Модуль 2</span>
+                <h3 class="module-card__title">Понимание эмоций и стресса</h3>
+                <p class="module-card__desc">Изучите природу эмоций, механизмы стресса и научитесь распознавать их проявления у себя и окружающих.</p>
+                <span class="module-card__arrow">Перейти к модулю <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- Модуль 3 -->
+            <a href="module_3.html" class="module-card module-card--3 fade-in-up" aria-label="Модуль 3: Поддерживающее общение">
+                <div class="module-card__icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+                <span class="module-card__number">Модуль 3</span>
+                <h3 class="module-card__title">Поддерживающее общение</h3>
+                <p class="module-card__desc">Освойте техники активного слушания, эмпатичного диалога и бережной обратной связи.</p>
+                <span class="module-card__arrow">Перейти к модулю <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- Модуль 4 -->
+            <a href="module_4.html" class="module-card module-card--4 fade-in-up" aria-label="Модуль 4: Помощь в трудных ситуациях">
+                <div class="module-card__icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+                <span class="module-card__number">Модуль 4</span>
+                <h3 class="module-card__title">Помощь в трудных ситуациях</h3>
+                <p class="module-card__desc">Практические алгоритмы помощи при острых эмоциональных состояниях, панике и кризисных реакциях.</p>
+                <span class="module-card__arrow">Перейти к модулю <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- Модуль 5 -->
+            <a href="module_5.html" class="module-card module-card--5 fade-in-up" aria-label="Модуль 5: Границы и забота о себе">
+                <div class="module-card__icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <span class="module-card__number">Модуль 5</span>
+                <h3 class="module-card__title">Границы и забота о себе</h3>
+                <p class="module-card__desc">Как выстраивать здоровые границы, избегать выгорания и сохранять внутренний ресурс, помогая другим.</p>
+                <span class="module-card__arrow">Перейти к модулю <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__block">
+                <p class="footer__label">Горячая линия</p>
+                <a href="tel:88000000000" class="footer__phone">
+                    <i class="fa-solid fa-phone"></i> 8-800-000-00-00
+                </a>
+            </div>
+            <div class="footer__block">
+                <p class="footer__label">Телефон доверия</p>
+                <a href="tel:88001111111" class="footer__phone">
+                    <i class="fa-solid fa-phone"></i> 8-800-111-11-11
+                </a>
+            </div>
+            <div class="footer__block">
+                <p class="footer__label">Экстренная помощь</p>
+                <a href="tel:+70000000000" class="footer__phone">
+                    <i class="fa-solid fa-phone"></i> +7 (000) 000-00-00
+                </a>
+            </div>
+        </div>
+        <p class="footer__bottom">Если вам нужна помощь — не оставайтесь одни. Позвоните по одному из номеров выше.</p>
+    </footer>
+
+    <!-- ==================== JS: Анимация появления карточек ==================== -->
+    <script>
+        (function() {
+            // Intersection Observer — плавное появление карточек при скролле
+            const cards = document.querySelectorAll('.fade-in-up');
+
+            if ('IntersectionObserver' in window) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -30px 0px',
+                    threshold: 0.12,
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                cards.forEach((card) => observer.observe(card));
+            } else {
+                // Фолбэк для старых браузеров — просто показываем сразу
+                cards.forEach((card) => card.classList.add('visible'));
+            }
+
+            // Небольшая задержка для hero-анимации при загрузке
+            const heroContent = document.querySelector('.hero__content');
+            if (heroContent) {
+                heroContent.style.opacity = '0';
+                heroContent.style.transform = 'translateY(20px)';
+                heroContent.style.transition = 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                setTimeout(() => {
+                    heroContent.style.opacity = '1';
+                    heroContent.style.transform = 'translateY(0)';
+                }, 150);
+            }
+        })();
+    </script>
+
+</body>
+</html>

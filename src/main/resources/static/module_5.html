@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модуль 5 — Границы и забота о себе</title>
+
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --deep-blue: #1a3550;
+            --dark-blue: #1e3d5c;
+            --medium-blue: #2c5a82;
+            --primary-blue: #3e709e;
+            --soft-blue: #5b8db8;
+            --light-blue: #a3c5e0;
+            --pale-blue: #d6e7f5;
+            --bg-blue: #edf3f8;
+            --card-bg: #ffffff;
+            --text-dark: #152433;
+            --text-medium: #3a4f63;
+            --text-light: #5f7389;
+            --text-muted: #8899ae;
+            --accent-gold: #c9a96e;
+            --footer-bg: #0f2435;
+            --footer-text: #b0c5d8;
+            --border-subtle: #dce7f0;
+            --shadow-sm: 0 1px 3px rgba(21, 36, 51, 0.06), 0 1px 2px rgba(21, 36, 51, 0.04);
+            --shadow-md: 0 4px 16px rgba(21, 36, 51, 0.07), 0 2px 6px rgba(21, 36, 51, 0.05);
+            --shadow-lg: 0 12px 32px rgba(21, 36, 51, 0.10), 0 4px 10px rgba(21, 36, 51, 0.06);
+            --shadow-xl: 0 20px 48px rgba(21, 36, 51, 0.13), 0 6px 16px rgba(21, 36, 51, 0.07);
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 20px;
+            --radius-xl: 24px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-blue);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ==================== HEADER ==================== */
+        .header {
+            background: var(--deep-blue);
+            padding: 0 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(15, 36, 53, 0.25);
+        }
+        .header__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        .header__left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header__icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #c9ddf0;
+        }
+        .header__title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+            line-height: 1.2;
+        }
+        .header__subtitle {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 400;
+            color: #a3c0db;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .header__back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #d4e1ef;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.25s;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+        .header__back:hover {
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .header__back i {
+            font-size: 0.8rem;
+        }
+
+        /* ==================== MAIN CONTENT ==================== */
+        .main-content {
+            flex: 1;
+            max-width: 960px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 32px 20px 48px;
+        }
+
+        /* Заголовок модуля */
+        .module-header {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 28px 32px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .module-header__icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: #e4eef6;
+            color: #4278a5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .module-header__text h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            letter-spacing: -0.2px;
+            margin-bottom: 4px;
+        }
+        .module-header__text .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* Карточка-секция */
+        .section-card {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 24px 28px;
+            margin-bottom: 22px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-subtle);
+            transition: box-shadow var(--transition);
+        }
+        .section-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+        .section-card h2 {
+            font-size: 1.2rem;
+            font-weight: 650;
+            color: var(--deep-blue);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -0.1px;
+        }
+        .section-card h2 i {
+            color: var(--primary-blue);
+            font-size: 1rem;
+            width: 28px;
+            text-align: center;
+        }
+        .section-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--medium-blue);
+            margin: 16px 0 8px;
+            letter-spacing: -0.1px;
+        }
+        .section-card p,
+        .section-card li {
+            color: var(--text-medium);
+            font-size: 0.92rem;
+            line-height: 1.65;
+            margin-bottom: 6px;
+        }
+        .section-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .section-card ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 8px;
+        }
+        .section-card ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--light-blue);
+        }
+        .highlight-box {
+            background: #f0f5fb;
+            border-left: 4px solid var(--primary-blue);
+            padding: 12px 18px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 14px 0;
+            font-weight: 500;
+            color: var(--dark-blue);
+            font-size: 0.9rem;
+        }
+
+        /* Таблица */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 0.88rem;
+        }
+        .info-table th {
+            background: #eef3f9;
+            color: var(--dark-blue);
+            font-weight: 600;
+            padding: 10px 14px;
+            text-align: left;
+            border-radius: 6px 6px 0 0;
+        }
+        .info-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #e9eff5;
+            color: var(--text-medium);
+            vertical-align: top;
+        }
+        .info-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ==================== ТЕСТ ==================== */
+        .test-section {
+            margin-top: 32px;
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 28px 28px 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-subtle);
+        }
+        .test-section h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .test-section .test-intro {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        .question-block {
+            background: #f9fbfd;
+            border-radius: var(--radius-sm);
+            padding: 18px 20px;
+            margin-bottom: 14px;
+            border: 1px solid #e9eff5;
+            transition: border-color 0.2s;
+        }
+        .question-block:hover {
+            border-color: #cddae6;
+        }
+        .question-block p {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.92rem;
+            margin-bottom: 10px;
+        }
+        .question-block label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 0.88rem;
+            color: var(--text-medium);
+            margin-bottom: 4px;
+            font-weight: 400;
+        }
+        .question-block label:hover {
+            background: #eef3f9;
+        }
+        .question-block input[type="radio"] {
+            accent-color: var(--primary-blue);
+            width: 17px;
+            height: 17px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+        .test-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-blue);
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.25s, box-shadow 0.25s;
+            margin-top: 8px;
+            letter-spacing: 0.2px;
+        }
+        .test-btn:hover {
+            background: var(--medium-blue);
+            box-shadow: var(--shadow-lg);
+        }
+        .test-btn i {
+            font-size: 0.85rem;
+        }
+
+        /* Результат */
+        .result-box {
+            margin-top: 20px;
+            padding: 18px 22px;
+            background: #eef5fc;
+            border-radius: var(--radius-sm);
+            border: 1px solid #c5d9ec;
+            display: none;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--dark-blue);
+            align-items: center;
+            gap: 12px;
+        }
+        .result-box i {
+            font-size: 1.6rem;
+            color: var(--primary-blue);
+        }
+        .result-box.visible {
+            display: flex;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: var(--footer-bg);
+            padding: 28px 24px 24px;
+            color: var(--footer-text);
+            margin-top: auto;
+        }
+        .footer__inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: center;
+        }
+        .footer__block {
+            flex: 1 1 200px;
+            min-width: 160px;
+        }
+        .footer__label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #7b95b0;
+            margin-bottom: 6px;
+        }
+        .footer__phone {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #d4e1ef;
+            text-decoration: none;
+            transition: color 0.25s;
+            line-height: 1.6;
+        }
+        .footer__phone:hover {
+            color: #ffffff;
+        }
+        .footer__phone i {
+            margin-right: 6px;
+            color: #6b8fab;
+            font-size: 0.8rem;
+        }
+        .footer__bottom {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 0.75rem;
+            color: #5e7a94;
+        }
+
+        /* Адаптив */
+        @media (max-width: 700px) {
+            .header__inner {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 10px 0;
+                gap: 10px;
+                justify-content: space-between;
+            }
+            .header__back {
+                font-size: 0.78rem;
+                padding: 6px 12px;
+            }
+            .header__title {
+                font-size: 0.9rem;
+            }
+            .header__subtitle {
+                font-size: 0.65rem;
+            }
+            .module-header {
+                flex-direction: column;
+                gap: 12px;
+                padding: 20px;
+            }
+            .module-header__icon {
+                width: 44px;
+                height: 44px;
+                font-size: 22px;
+                border-radius: 12px;
+            }
+            .module-header__text h1 {
+                font-size: 1.3rem;
+            }
+            .section-card {
+                padding: 18px 16px;
+            }
+            .section-card h2 {
+                font-size: 1.05rem;
+            }
+            .test-section {
+                padding: 18px 14px;
+            }
+            .question-block {
+                padding: 14px 12px;
+            }
+            .question-block label {
+                font-size: 0.82rem;
+            }
+            .test-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__left">
+                <div class="header__icon" aria-hidden="true">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <div>
+                    <span class="header__title">Модуль 5</span>
+                    <span class="header__subtitle">Первая психологическая помощь</span>
+                </div>
+            </div>
+            <a href="index.html" class="header__back" aria-label="Вернуться на главную">
+                <i class="fa-solid fa-arrow-left"></i> На главную
+            </a>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="main-content">
+
+        <!-- Заголовок модуля -->
+        <div class="module-header">
+            <div class="module-header__icon" aria-hidden="true">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="module-header__text">
+                <h1>Границы и забота о себе</h1>
+                <p class="subtitle">Как выстраивать личные границы, распознавать выгорание и применять техники самопомощи.</p>
+            </div>
+        </div>
+
+        <!-- Секция 1: Личные границы -->
+        <div class="section-card">
+            <h2><i class="fa-solid fa-border-all"></i> 1. Личные границы</h2>
+            <h3>Что это такое?</h3>
+            <p><strong>Личные границы</strong> — это невидимая линия, которая отделяет твои чувства, мысли, тело, время и ресурсы от чужих. Это твои личные «правила игры», которые определяют, что для тебя допустимо, а что — нет.</p>
+            <p>Границы бывают:</p>
+            <ul>
+                <li><strong>Физические</strong> (к кому можно прикасаться, кто может заходить в твою комнату, брать твои вещи).</li>
+                <li><strong>Эмоциональные</strong> (что ты готов слушать, за чьи чувства ты не отвечаешь, какие темы тебе неприятны).</li>
+                <li><strong>Временные</strong> (сколько времени ты готов отдавать другим, когда тебе нужно побыть одному).</li>
+                <li><strong>Интеллектуальные</strong> (уважение к твоим мыслям, мнениям, даже если они отличаются).</li>
+            </ul>
+
+            <h3>Какие границы бывают (метафора забора):</h3>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Тип границ</th>
+                        <th>Метафора</th>
+                        <th>Характеристика</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Жесткие (стена)</strong></td>
+                        <td>Бетонный забор с колючей проволокой</td>
+                        <td>Никого не подпускает. Человек изолирован, не просит о помощи, не доверяет.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Здоровые (дверь)</strong></td>
+                        <td>Забор с калиткой, которую можно открыть</td>
+                        <td>Ты сам решаешь, кого впустить, когда и насколько. Можешь сказать «нет» и «да» осознанно.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Размытые (отсутствие)</strong></td>
+                        <td>Никакого забора</td>
+                        <td>Любой может зайти, взять твое время, энергию, заставить тебя чувствовать вину. Часто приводит к выгоранию.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Признаки нарушения твоих границ:</h3>
+            <ul>
+                <li>Ты говоришь «да», когда хочешь сказать «нет» (и потом злишься на себя).</li>
+                <li>Ты чувствуешь вину за отказ кому-то.</li>
+                <li>Другие берут твои вещи без спроса, читают переписку, заходят в комнату без стука.</li>
+                <li>Ты тратишь часы на того, кто не тратит на тебя и минуты.</li>
+                <li>После общения с определенными людьми ты чувствуешь пустоту или усталость.</li>
+            </ul>
+            <div class="highlight-box">
+                <i class="fa-solid fa-lightbulb" style="color: var(--primary-blue); margin-right: 6px;"></i>
+                <strong>Важное правило:</strong> Твои границы заканчиваются там, где начинаются чужие. Здоровые границы уважают границы другого.
+            </div>
+            <h3>Как сказать «нет» без чувства вины (формула простого отказа):</h3>
+            <ul>
+                <li>Не оправдывайся долго («я не могу, потому что… у меня там… может быть…» — это приглашение к спору).</li>
+                <li>Используй короткое «нет» или «я не буду это делать».</li>
+                <li>Если хочешь смягчить: «Я не могу сейчас помочь, но спасибо, что подумал обо мне» (без обещаний «потом»).</li>
+            </ul>
+        </div>
+
+        <!-- Секция 2: Эмоциональное выгорание -->
+        <div class="section-card">
+            <h2><i class="fa-solid fa-battery-empty"></i> 2. Эмоциональное выгорание</h2>
+            <h3>Что это такое?</h3>
+            <p><strong>Эмоциональное выгорание</strong> — это состояние физического, эмоционального и умственного истощения, вызванное хроническим стрессом, особенно связанным с заботой о других, учебой или работой. Выгорание не возникает за один день — оно накапливается месяцами.</p>
+            <p><strong>Важно:</strong> Выгорание — это не «лень» и не «слабость». Это результат длительной перегрузки без восстановления.</p>
+
+            <h3>Стадии выгорания (упрощенно):</h3>
+            <ul>
+                <li><strong>Золотая лихорадка</strong> — энтузиазм, желание делать всё и даже больше. Человек игнорирует усталость.</li>
+                <li><strong>Потеря топлива</strong> — появляется усталость, раздражительность, сбои сна. Но человек продолжает давить.</li>
+                <li><strong>Хронические симптомы</strong> — усталость становится фоновой, появляются головные боли, проблемы с памятью, цинизм («все вокруг дураки»).</li>
+                <li><strong>Кризис</strong> — резкое падение продуктивности, отвращение к тому, что раньше нравилось, мысли «это бессмысленно».</li>
+                <li><strong>Сквозь асфальт</strong> — симптомы становятся хроническими, выгорание вплетается в личность. Требуется длительная терапия.</li>
+            </ul>
+
+            <h3>Признаки выгорания (отличие от обычной усталости):</h3>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Обычная усталость</th>
+                        <th>Выгорание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Проходит после выходных или хорошего сна</td>
+                        <td>Не проходит после отдыха</td>
+                    </tr>
+                    <tr>
+                        <td>Есть конкретная причина (экзамен, проект)</td>
+                        <td>Чувство пустоты без понятной причины</td>
+                    </tr>
+                    <tr>
+                        <td>Ты знаешь, что хочешь делать (поспать, гулять)</td>
+                        <td>Апатия — не хочется ничего, даже того, что раньше радовало</td>
+                    </tr>
+                    <tr>
+                        <td>Нет чувства «я больше не могу это выносить»</td>
+                        <td>Появляется цинизм, раздражение на людей и задачи</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Факторы риска для подростков:</h3>
+            <ul>
+                <li>Перфекционизм («я должен быть лучшим»).</li>
+                <li>Гиперответственность («если не я, то никто»).</li>
+                <li>Отсутствие навыка говорить «нет».</li>
+                <li>Совмещение школы, кружков, помощи по дому и поддержки друзей (24/7 в режиме «доступа»).</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>Ключевая идея:</strong> Выгорание — это не награда за усердие. Это сигнал, что система сломалась и требует перезагрузки.
+            </div>
+        </div>
+
+        <!-- Секция 3: Самопомощь и саморегуляция -->
+        <div class="section-card">
+            <h2><i class="fa-solid fa-hand-holding-heart"></i> 3. Самопомощь и саморегуляция</h2>
+            <h3>Что это?</h3>
+            <p><strong>Самопомощь</strong> — это твои действия по поддержанию своего физического и психического здоровья до того, как случится кризис. Это не эгоизм, а базовая гигиена психики.</p>
+            <p><strong>Саморегуляция</strong> — это способность управлять своим состоянием: успокаиваться при тревоге, подбадривать себя при апатии, переключаться между задачами без срывов.</p>
+
+            <h3>Почему самопомощь работает (нейробиология)?</h3>
+            <p>Хронический стресс держит твою нервную систему в режиме «бой/беги/замри». Самопомощь — это инструменты, которые помогают переключиться в режим «отдыхай и восстанавливайся» (активация парасимпатической нервной системы).</p>
+
+            <h3>Практические техники (от простых к сложным):</h3>
+            <p><strong>Для быстрой саморегуляции (когда «накрыло» прямо сейчас):</strong></p>
+            <ul>
+                <li><strong>Дыхание квадратом:</strong> Вдох (4 счета) → задержка (4 счета) → выдох (4 счета) → задержка (4 счета). Повторить 5–10 раз.</li>
+                <li><strong>Заземление (5-4-3-2-1):</strong> Назови: 5 предметов, которые видишь → 4 звука, которые слышишь → 3 тактильных ощущения (что чувствует кожа) → 2 запаха → 1 вкус (или один глубокий вдох).</li>
+                <li><strong>Сброс напряжения через тело:</strong> Сжать кулаки со всей силы на 10 секунд → резко разжать и «стряхнуть» кисти. Повторить 3 раза.</li>
+            </ul>
+
+            <h3>Для ежедневной самопомощи (профилактика):</h3>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Область</th>
+                        <th>Простые действия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Тело</strong></td>
+                        <td>Сон не менее 7–8 часов (в одно и то же время). Еда без гаджетов. Хотя бы 10 минут движения в день.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Эмоции</strong></td>
+                        <td>Дневник эмоций (1–2 минуты: «что я чувствую сейчас?»). Разрешение себе грустить/злиться без оценки «это плохо».</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Время</strong></td>
+                        <td>Окна «без телефона» (например, час после пробуждения). Один выходной в неделю без учебы.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Социальное</strong></td>
+                        <td>Осознанный выбор, с кем общаться. Практика «маленького нет» раз в день.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Границы для заботы о себе (прямые фразы):</h3>
+            <ul>
+                <li>«Я сейчас не могу говорить об этом. Давай позже».</li>
+                <li>«Это не входит в мои планы».</li>
+                <li>«Мне нужно время побыть одной/одному».</li>
+                <li>«Я не отвечаю за твои чувства, если я сказал честно».</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>Самый частый миф о самопомощи:</strong> «Сначала я сделаю все дела, отдохну потом». <br>Реальность: Потом не наступает. Самопомощь — это не десерт после работы, а часть работы. Без нее эффективность падает, а выгорание приходит быстрее.
+            </div>
+        </div>
+
+        <!-- ==================== ТЕСТ ==================== -->
+        <div class="test-section" id="test">
+            <h2><i class="fa-solid fa-clipboard-check"></i> Проверь себя</h2>
+            <p class="test-intro">Ответь на 10 вопросов, чтобы убедиться, что ты усвоил(а) материал.</p>
+
+            <form id="quizForm">
+                <!-- Вопрос 1 -->
+                <div class="question-block">
+                    <p>1. Какая метафора в материале соответствует здоровым личным границам?</p>
+                    <label><input type="radio" name="q1" value="А"> А) Бетонный забор с колючей проволокой</label>
+                    <label><input type="radio" name="q1" value="Б"> Б) Отсутствие забора</label>
+                    <label><input type="radio" name="q1" value="В"> В) Забор с калиткой, которую можно открывать по своему желанию</label>
+                    <label><input type="radio" name="q1" value="Г"> Г) Стеклянная стена, через которую всё видно</label>
+                </div>
+
+                <!-- Вопрос 2 -->
+                <div class="question-block">
+                    <p>2. Что из перечисленного является признаком нарушения личных границ?</p>
+                    <label><input type="radio" name="q2" value="А"> А) Человек говорит «нет», когда хочет сказать «да»</label>
+                    <label><input type="radio" name="q2" value="Б"> Б) Человек говорит «да», когда хочет сказать «нет», и потом злится на себя</label>
+                    <label><input type="radio" name="q2" value="В"> В) Человек всегда соглашается, потому что ему всё нравится</label>
+                    <label><input type="radio" name="q2" value="Г"> Г) Человек просит других уважать его личное пространство</label>
+                </div>
+
+                <!-- Вопрос 3 -->
+                <div class="question-block">
+                    <p>3. Какое утверждение об эмоциональном выгорании является верным?</p>
+                    <label><input type="radio" name="q3" value="А"> А) Выгорание возникает за один-два дня интенсивной работы</label>
+                    <label><input type="radio" name="q3" value="Б"> Б) Выгорание — это форма лени, которая лечится «взятием себя в руки»</label>
+                    <label><input type="radio" name="q3" value="В"> В) Выгорание — это результат длительной перегрузки без восстановления</label>
+                    <label><input type="radio" name="q3" value="Г"> Г) Выгорание бывает только у взрослых, работающих по 60 часов в неделю</label>
+                </div>
+
+                <!-- Вопрос 4 -->
+                <div class="question-block">
+                    <p>4. Чем обычная усталость отличается от выгорания?</p>
+                    <label><input type="radio" name="q4" value="А"> А) Усталость не проходит после сна, а выгорание — проходит</label>
+                    <label><input type="radio" name="q4" value="Б"> Б) Усталость всегда имеет физические симптомы, а выгорание — только эмоциональные</label>
+                    <label><input type="radio" name="q4" value="В"> В) Усталость проходит после отдыха, а выгорание — нет</label>
+                    <label><input type="radio" name="q4" value="Г"> Г) Усталость — это нормально, а выгорание бывает только у слабых людей</label>
+                </div>
+
+                <!-- Вопрос 5 -->
+                <div class="question-block">
+                    <p>5. Какой фактор из перечисленных повышает риск эмоционального выгорания?</p>
+                    <label><input type="radio" name="q5" value="А"> А) Умение говорить «нет»</label>
+                    <label><input type="radio" name="q5" value="Б"> Б) Перфекционизм («я должен быть лучшим»)</label>
+                    <label><input type="radio" name="q5" value="В"> В) Наличие хобби вне школы</label>
+                    <label><input type="radio" name="q5" value="Г"> Г) Хороший сон по 8 часов</label>
+                </div>
+
+                <!-- Вопрос 6 -->
+                <div class="question-block">
+                    <p>6. В технике «дыхание квадратом» правильная последовательность счетов:</p>
+                    <label><input type="radio" name="q6" value="А"> А) Вдох (4) — выдох (4) — задержка (4) — вдох (4)</label>
+                    <label><input type="radio" name="q6" value="Б"> Б) Вдох (4) — задержка (4) — выдох (4) — задержка (4)</label>
+                    <label><input type="radio" name="q6" value="В"> В) Вдох (2) — задержка (2) — выдох (6) — задержка (2)</label>
+                    <label><input type="radio" name="q6" value="Г"> Г) Вдох (4) — выдох (8) — задержка (4)</label>
+                </div>
+
+                <!-- Вопрос 7 -->
+                <div class="question-block">
+                    <p>7. Техника заземления «5-4-3-2-1» помогает при остром стрессе, потому что:</p>
+                    <label><input type="radio" name="q7" value="А"> А) Она заставляет мозг выполнять сложные математические вычисления</label>
+                    <label><input type="radio" name="q7" value="Б"> Б) Она переключает внимание с внутренних угроз (тревожных мыслей) на внешнюю реальность</label>
+                    <label><input type="radio" name="q7" value="В"> В) Она блокирует выработку кортизола на химическом уровне</label>
+                    <label><input type="radio" name="q7" value="Г"> Г) Она требует присутствия другого человека, что дает чувство безопасности</label>
+                </div>
+
+                <!-- Вопрос 8 -->
+                <div class="question-block">
+                    <p>8. Какая фраза является примером здорового отказа БЕЗ длинных оправданий?</p>
+                    <label><input type="radio" name="q8" value="А"> А) «Извини, я бы с радостью, но у меня тут столько дел, мама просила, и вообще я не выспался…»</label>
+                    <label><input type="radio" name="q8" value="Б"> Б) «Нет, я не буду это делать»</label>
+                    <label><input type="radio" name="q8" value="В"> В) «Я подумаю и, может быть, завтра, если успею, хотя вряд ли…»</label>
+                    <label><input type="radio" name="q8" value="Г"> Г) «Ладно, только в этот раз, но вообще я не должен»</label>
+                </div>
+
+                <!-- Вопрос 9 -->
+                <div class="question-block">
+                    <p>9. Что из перечисленного относится к ПРОФИЛАКТИЧЕСКОЙ самопомощи (ежедневной), а не к экстренной саморегуляции?</p>
+                    <label><input type="radio" name="q9" value="А"> А) Дыхание квадратом, когда накрыла паника</label>
+                    <label><input type="radio" name="q9" value="Б"> Б) Техника заземления 5-4-3-2-1 прямо во время ссоры</label>
+                    <label><input type="radio" name="q9" value="В"> В) Окно «без телефона» в течение часа после пробуждения каждый день</label>
+                    <label><input type="radio" name="q9" value="Г"> Г) Сброс напряжения через сжатие кулаков в момент гнева</label>
+                </div>
+
+                <!-- Вопрос 10 -->
+                <div class="question-block">
+                    <p>10. Какое утверждение о самопомощи является НЕВЕРНЫМ?</p>
+                    <label><input type="radio" name="q10" value="А"> А) Самопомощь — это часть работы по поддержанию психического здоровья, а не «десерт после дел»</label>
+                    <label><input type="radio" name="q10" value="Б"> Б) Самопомощь эффективна только тогда, когда человек уже в кризисе</label>
+                    <label><input type="radio" name="q10" value="В"> В) Самопомощь включает в себя и заботу о теле (сон, еда, движение)</label>
+                    <label><input type="radio" name="q10" value="Г"> Г) Самопомощь не является эгоизмом, это базовая гигиена психики</label>
+                </div>
+
+                <button type="button" class="test-btn" id="submitTest">
+                    <i class="fa-solid fa-check"></i> Завершить тест
+                </button>
+            </form>
+
+            <!-- Блок результата -->
+            <div class="result-box" id="resultBox">
+                <i class="fa-solid fa-circle-info"></i>
+                <span id="resultText"></span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__block">
+                <p class="footer__label">Горячая линия</p>
+                <a href="tel:88000000000" class="footer__phone"><i class="fa-solid fa-phone"></i> 8-800-000-00-00</a>
+            </div>
+            <div class="footer__block">
+                <p class="footer__label">Телефон доверия</p>
+                <a href="tel:88001111111" class="footer__phone"><i class="fa-solid fa-phone"></i> 8-800-111-11-11</a>
+            </div>
+            <div class="footer__block">
+                <p class="footer__label">Экстренная помощь</p>
+                <a href="tel:+70000000000" class="footer__phone"><i class="fa-solid fa-phone"></i> +7 (000) 000-00-00</a>
+            </div>
+        </div>
+        <p class="footer__bottom">Если вам нужна помощь — не оставайтесь одни. Позвоните по одному из номеров выше.</p>
+    </footer>
+
+    <!-- ==================== JS: Логика теста ==================== -->
+    <script>
+        (function() {
+            // Правильные ответы (ключ — буква варианта)
+            const correctAnswers = {
+                q1: 'В',
+                q2: 'Б',
+                q3: 'В',
+                q4: 'В',
+                q5: 'Б',
+                q6: 'Б',
+                q7: 'Б',
+                q8: 'Б',
+                q9: 'В',
+                q10: 'Б'
+            };
+
+            const submitBtn = document.getElementById('submitTest');
+            const resultBox = document.getElementById('resultBox');
+            const resultText = document.getElementById('resultText');
+            const quizForm = document.getElementById('quizForm');
+
+            submitBtn.addEventListener('click', function() {
+                let score = 0;
+                const total = Object.keys(correctAnswers).length;
+                let allAnswered = true;
+
+                // Проверяем, все ли вопросы имеют выбранный ответ
+                for (const [name, correctValue] of Object.entries(correctAnswers)) {
+                    const selected = quizForm.querySelector(`input[name="${name}"]:checked`);
+                    if (!selected) {
+                        allAnswered = false;
+                        break;
+                    }
+                }
+
+                if (!allAnswered) {
+                    // Подсвечиваем результат с просьбой ответить на все вопросы
+                    resultBox.classList.add('visible');
+                    resultBox.style.background = '#fff4e5';
+                    resultBox.style.borderColor = '#e6c78f';
+                    resultText.innerHTML = '<strong>Пожалуйста, ответьте на все вопросы перед завершением теста.</strong>';
+                    resultText.style.color = '#8a5d1c';
+                    resultBox.querySelector('i').className = 'fa-solid fa-exclamation-triangle';
+                    resultBox.querySelector('i').style.color = '#c28b2c';
+                    return;
+                }
+
+                // Подсчет правильных ответов
+                for (const [name, correctValue] of Object.entries(correctAnswers)) {
+                    const selected = quizForm.querySelector(`input[name="${name}"]:checked`);
+                    if (selected && selected.value === correctValue) {
+                        score++;
+                    }
+                }
+
+                // Отображаем результат (только баллы, без детализации)
+                resultBox.classList.add('visible');
+                resultBox.style.background = '#eef5fc';
+                resultBox.style.borderColor = '#c5d9ec';
+                resultText.style.color = 'var(--dark-blue)';
+                resultBox.querySelector('i').className = 'fa-solid fa-circle-check';
+                resultBox.querySelector('i').style.color = 'var(--primary-blue)';
+
+                let message = '';
+                if (score === total) {
+                    message = `Отлично! Ты набрал(а) ${score} из ${total} баллов. Ты прекрасно усвоил(а) материал!`;
+                } else if (score >= 7) {
+                    message = `Хорошо! Ты набрал(а) ${score} из ${total} баллов. Рекомендуем ещё раз просмотреть ключевые разделы.`;
+                } else {
+                    message = `Ты набрал(а) ${score} из ${total} баллов. Советуем внимательно перечитать материал и попробовать снова.`;
+                }
+                resultText.textContent = message;
+
+                // Плавный скролл к результату
+                resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        })();
+    </script>
+
+</body>
+</html>

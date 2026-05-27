@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модуль 3 — Поддерживающее общение</title>
+
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --deep-blue: #1a3550;
+            --dark-blue: #1e3d5c;
+            --medium-blue: #2c5a82;
+            --primary-blue: #3e709e;
+            --soft-blue: #5b8db8;
+            --light-blue: #a3c5e0;
+            --pale-blue: #d6e7f5;
+            --bg-blue: #edf3f8;
+            --card-bg: #ffffff;
+            --text-dark: #152433;
+            --text-medium: #3a4f63;
+            --text-light: #5f7389;
+            --text-muted: #8899ae;
+            --accent-gold: #c9a96e;
+            --footer-bg: #0f2435;
+            --footer-text: #b0c5d8;
+            --border-subtle: #dce7f0;
+            --shadow-sm: 0 1px 3px rgba(21, 36, 51, 0.06), 0 1px 2px rgba(21, 36, 51, 0.04);
+            --shadow-md: 0 4px 16px rgba(21, 36, 51, 0.07), 0 2px 6px rgba(21, 36, 51, 0.05);
+            --shadow-lg: 0 12px 32px rgba(21, 36, 51, 0.10), 0 4px 10px rgba(21, 36, 51, 0.06);
+            --shadow-xl: 0 20px 48px rgba(21, 36, 51, 0.13), 0 6px 16px rgba(21, 36, 51, 0.07);
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 20px;
+            --radius-xl: 24px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-blue);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ==================== HEADER ==================== */
+        .header {
+            background: var(--deep-blue);
+            padding: 0 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(15, 36, 53, 0.25);
+        }
+        .header__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        .header__left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header__icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #c9ddf0;
+        }
+        .header__title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+            line-height: 1.2;
+        }
+        .header__subtitle {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 400;
+            color: #a3c0db;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .header__back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #d4e1ef;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.25s;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+        .header__back:hover {
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .header__back i {
+            font-size: 0.8rem;
+        }
+
+        /* ==================== MAIN CONTENT ==================== */
+        .main-content {
+            flex: 1;
+            max-width: 960px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 32px 20px 48px;
+        }
+
+        /* Заголовок модуля */
+        .module-header {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 28px 32px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .module-header__icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: #e9f2f9;
+            color: #4a82b0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .module-header__text h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            letter-spacing: -0.2px;
+            margin-bottom: 4px;
+        }
+        .module-header__text .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* Карточка-секция */
+        .section-card {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 24px 28px;
+            margin-bottom: 22px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-subtle);
+            transition: box-shadow var(--transition);
+        }
+        .section-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+        .section-card h2 {
+            font-size: 1.2rem;
+            font-weight: 650;
+            color: var(--deep-blue);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -0.1px;
+        }
+        .section-card h2 i {
+            color: var(--primary-blue);
+            font-size: 1rem;
+            width: 28px;
+            text-align: center;
+        }
+        .section-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--medium-blue);
+            margin: 16px 0 8px;
+            letter-spacing: -0.1px;
+        }
+        .section-card p,
+        .section-card li {
+            color: var(--text-medium);
+            font-size: 0.92rem;
+            line-height: 1.65;
+            margin-bottom: 6px;
+        }
+        .section-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .section-card ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 8px;
+        }
+        .section-card ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--light-blue);
+        }
+        .highlight-box {
+            background: #f0f5fb;
+            border-left: 4px solid var(--primary-blue);
+            padding: 12px 18px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 14px 0;
+            font-weight: 500;
+            color: var(--dark-blue);
+            font-size: 0.9rem;
+        }
+
+        /* ==================== ТЕСТ ==================== */
+        .test-section {
+            margin-top: 32px;
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 28px 28px 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-subtle);
+        }
+        .test-section h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .test-section .test-intro {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        .question-block {
+            background: #f9fbfd;
+            border-radius: var(--radius-sm);
+            padding: 18px 20px;
+            margin-bottom: 14px;
+            border: 1px solid #e9eff5;
+            transition: border-color 0.2s;
+        }
+        .question-block:hover {
+            border-color: #cddae6;
+        }
+        .question-block p {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.92rem;
+            margin-bottom: 10px;
+        }
+        .question-block label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 0.88rem;
+            color: var(--text-medium);
+            margin-bottom: 4px;
+            font-weight: 400;
+        }
+        .question-block label:hover {
+            background: #eef3f9;
+        }
+        .question-block input[type="radio"] {
+            accent-color: var(--primary-blue);
+            width: 17px;
+            height: 17px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+        .test-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-blue);
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.25s, box-shadow 0.25s;
+            margin-top: 8px;
+            letter-spacing: 0.2px;
+        }
+        .test-btn:hover {
+            background: var(--medium-blue);
+            box-shadow: var(--shadow-lg);
+        }
+        .test-btn i {
+            font-size: 0.85rem;
+        }
+
+        /* Результат */
+        .result-box {
+            margin-top: 20px;
+            padding: 18px 22px;
+            background: #eef5fc;
+            border-radius: var(--radius-sm);
+            border: 1px solid #c5d9ec;
+            display: none;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--dark-blue);
+            align-items: center;
+            gap: 12px;
+        }
+        .result-box i {
+            font-size: 1.6rem;
+            color: var(--primary-blue);
+        }
+        .result-box.visible {
+            display: flex;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: var(--footer-bg);
+            padding: 28px 24px 24px;
+            color: var(--footer-text);
+            margin-top: auto;
+        }
+        .footer__inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: center;
+        }
+        .footer__block {
+            flex: 1 1 200px;
+            min-width: 160px;
+        }
+        .footer__label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #7b95b0;
+            margin-bottom: 6px;
+        }
+        .footer__phone {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #d4e1ef;
+            text-decoration: none;
+            transition: color 0.25s;
+            line-height: 1.6;
+        }
+        .footer__phone:hover {
+            color: #ffffff;
+        }
+        .footer__phone i {
+            margin-right: 6px;
+            color: #6b8fab;
+            font-size: 0.8rem;
+        }
+        .footer__bottom {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 0.75rem;
+            color: #5e7a94;
+        }
+
+        /* Адаптив */
+        @media (max-width: 700px) {
+            .header__inner {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 10px 0;
+                gap: 10px;
+                justify-content: space-between;
+            }
+            .header__back {
+                font-size: 0.78rem;
+                padding: 6px 12px;
+            }
+            .header__title {
+                font-size: 0.9rem;
+            }
+            .header__subtitle {
+                font-size: 0.65rem;
+            }
+            .module-header {
+                flex-direction: column;
+                gap: 12px;
+                padding: 20px;
+            }
+            .module-header__icon {
+                width: 44px;
+                height: 44px;
+                font-size: 22px;
+                border-radius: 12px;
+            }
+            .module-header__text h1 {
+                font-size: 1.3rem;
+            }
+            .section-card {
+                padding: 18px 16px;
+            }
+            .section-card h2 {
+                font-size: 1.05rem;
+            }
+            .test-section {
+                padding: 18px 14px;
+            }
+            .question-block {
+                padding: 14px 12px;
+            }
+            .question-block label {
+                font-size: 0.82rem;
+            }
+            .test-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__left">
+                <div class="header__icon" aria-hidden="true">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <div>
+                    <span class="header__title">Модуль 3</span>
+                    <span class="header__subtitle">Первая психологическая помощь</span>
+                </div>
+            </div>
+            <a href="index.html" class="header__back" aria-label="Вернуться на главную">
+                <i class="fa-solid fa-arrow-left"></i> На главную
+            </a>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="main-content">
+
+        <!-- Заголовок модуля -->
+        <div class="module-header">
+            <div class="module-header__icon" aria-hidden="true">
+                <i class="fa-solid fa-comments"></i>
+            </div>
+            <div class="module-header__text">
+                <h1>Поддерживающее общение</h1>
+                <p class="subtitle">Как разговаривать с человеком так, чтобы он почувствовал себя услышанным и не одиноким.</p>
+            </div>
+        </div>
+
+        <!-- Введение -->
+        <div class="section-card">
+            <p><strong>Поддерживающее общение</strong> — это когда человек после разговора с вами чувствует, что его услышали, поняли и ему стало немного легче. Это не про то, чтобы «починить» проблему собеседника, а про то, чтобы быть рядом и показать: «Ты не один».</p>
+        </div>
+
+        <!-- Секция 1: Как начать разговор -->
+        <div class="section-card">
+            <h2><i class="fa-solid fa-door-open"></i> Как начать разговор</h2>
+            <p>Хороший разговор часто начинается просто и естественно. Не нужно сразу лезть в глубокие темы.</p>
+            <p>Лучше всего начинать с <strong>открытых вопросов</strong>, на которые сложно ответить односложно «да» или «нет»:</p>
+            <ul>
+                <li>«Как у тебя сегодня настроение?»</li>
+                <li>«Как прошёл твой день?»</li>
+                <li>«Что сейчас больше всего занимает твои мысли?»</li>
+                <li>«Расскажи, как ты себя чувствуешь после того, что произошло?»</li>
+            </ul>
+            <p>Можно начать и с наблюдения:</p>
+            <ul>
+                <li>«Я вижу, ты сегодня какой-то тихий. Всё нормально?»</li>
+                <li>«Заметил, что ты последнее время много думаешь. Хочешь поделиться?»</li>
+            </ul>
+            <p>Главное — говорить спокойно и искренне. Человек должен почувствовать, что вы действительно готовы его услышать, а не просто соблюдаете вежливость.</p>
+        </div>
+
+        <!-- Секция 2: Активное слушание -->
+        <div class="section-card">
+            <h2><i class="fa-solid fa-ear-listen"></i> Активное слушание</h2>
+            <p>Самая важная часть поддерживающего общения — это умение слушать.</p>
+            <p><strong>Активное слушание</strong> означает, что вы полностью сосредоточены на человеке:</p>
+            <ul>
+                <li>Смотрите на собеседника (но не сверлитесь взглядом).</li>
+                <li>Не отвлекаетесь на телефон, не перебиваете.</li>
+                <li>Показываете, что слышите: киваете, говорите коротко «угу», «понятно», «да, слушаю».</li>
+            </ul>
+            <p>Полезные приёмы:</p>
+            <ul>
+                <li><strong>Перефразировать своими словами:</strong> «То есть ты чувствуешь, что тебя не ценят на работе, правильно понимаю?»</li>
+                <li><strong>Задавать уточняющие вопросы:</strong> «А что именно тебя больше всего задело?»</li>
+                <li><strong>Делать паузы</strong> — иногда человеку нужно время, чтобы собраться с мыслями.</li>
+            </ul>
+            <p>Когда человек видит, что его действительно слушают, он начинает открываться гораздо больше.</p>
+        </div>
+
+        <!-- Секция 3: Поддерживающие фразы -->
+        <div class="section-card">
+            <h2><i class="fa-solid fa-heart"></i> Поддерживающие фразы</h2>
+            <p>Вот фразы, которые помогают человеку почувствовать поддержку:</p>
+            <ul>
+                <li>«Я тебя слышу»</li>
+                <li>«Мне очень жаль, что ты через это проходишь»</li>
+                <li>«Твои чувства абсолютно нормальные»</li>
+                <li>«Я с тобой»</li>
+                <li>«Хочешь рассказать подробнее?»</li>
+                <li>«Это действительно тяжело»</li>
+                <li>«Ты имеешь право так себя чувствовать»</li>
+                <li>«Я здесь, если тебе нужно выговориться»</li>
+                <li>«Ты не один в этом»</li>
+            </ul>
+            <p>Эти фразы показывают, что вы рядом и не осуждаете.</p>
+        </div>
+
+        <!-- Секция 4: Ошибки в общении -->
+        <div class="section-card">
+            <h2><i class="fa-solid fa-triangle-exclamation"></i> Ошибки в общении, которых лучше избегать</h2>
+            <p>Даже с лучшими намерениями можно случайно сделать человеку хуже. Вот самые частые ошибки:</p>
+            <ul>
+                <li><strong>Сразу давать советы</strong> («Да просто не обращай внимания», «Тебе нужно…»). Часто человек сначала хочет быть услышанным, а не получить решение.</li>
+                <li><strong>Обесценивать чувства</strong> («Да ладно, не так всё плохо», «Другие и не такое переживают»).</li>
+                <li><strong>Переводить разговор на себя</strong> («Ой, у меня тоже было точно так же…»).</li>
+                <li><strong>Перебивать</strong> или заканчивать предложения за человека.</li>
+                <li><strong>Слишком быстро предлагать «позитив»</strong> («Всё будет хорошо!» — когда человеку сейчас очень плохо).</li>
+                <li><strong>Судить</strong> («Ну ты и сам отчасти виноват»).</li>
+            </ul>
+            <div class="highlight-box">
+                <i class="fa-solid fa-lightbulb" style="color: var(--primary-blue); margin-right: 6px;"></i>
+                Если хочется дать совет — лучше сначала спросить: <strong>«Хочешь, я поделюсь своими мыслями, как это можно посмотреть, или пока просто послушать?»</strong>
+            </div>
+            <p>Поддерживающее общение — это навык. Чем больше вы практикуетесь, тем естественнее у вас это получается. Главное — искреннее желание понять и поддержать человека.</p>
+        </div>
+
+        <!-- ==================== ТЕСТ ==================== -->
+        <div class="test-section" id="test">
+            <h2><i class="fa-solid fa-clipboard-check"></i> Проверь себя</h2>
+            <p class="test-intro">Ответь на 8 вопросов, чтобы убедиться, что ты усвоил(а) материал.</p>
+
+            <form id="quizForm">
+                <!-- Вопрос 1 -->
+                <div class="question-block">
+                    <p>1. Что такое поддерживающее общение?</p>
+                    <label><input type="radio" name="q1" value="А"> А) Это когда ты быстро даёшь человеку совет, как решить его проблему</label>
+                    <label><input type="radio" name="q1" value="Б"> Б) Это когда человек после разговора чувствует, что его услышали и ему стало легче</label>
+                    <label><input type="radio" name="q1" value="В"> В) Это когда ты рассказываешь человеку о своих проблемах</label>
+                    <label><input type="radio" name="q1" value="Г"> Г) Это вежливый разговор о погоде</label>
+                </div>
+
+                <!-- Вопрос 2 -->
+                <div class="question-block">
+                    <p>2. Как лучше всего начинать поддерживающий разговор?</p>
+                    <label><input type="radio" name="q2" value="А"> А) Сразу спрашивать о самой большой проблеме</label>
+                    <label><input type="radio" name="q2" value="Б"> Б) Задать открытый вопрос, например: «Как у тебя сегодня настроение?»</label>
+                    <label><input type="radio" name="q2" value="В"> В) Начать с фразы «Всё будет хорошо!»</label>
+                    <label><input type="radio" name="q2" value="Г"> Г) Сразу давать советы</label>
+                </div>
+
+                <!-- Вопрос 3 -->
+                <div class="question-block">
+                    <p>3. Какой вопрос считается открытым?</p>
+                    <label><input type="radio" name="q3" value="А"> А) «Расскажи, как прошёл твой день?»</label>
+                    <label><input type="radio" name="q3" value="Б"> Б) «Ты расстроен?»</label>
+                    <label><input type="radio" name="q3" value="В"> В) «Всё нормально?»</label>
+                    <label><input type="radio" name="q3" value="Г"> Г) «Тебе лучше?»</label>
+                </div>
+
+                <!-- Вопрос 4 -->
+                <div class="question-block">
+                    <p>4. Что такое активное слушание?</p>
+                    <label><input type="radio" name="q4" value="А"> А) Когда ты думаешь, что ответить, пока человек говорит</label>
+                    <label><input type="radio" name="q4" value="Б"> Б) Когда ты полностью сосредоточен на собеседнике, киваешь и перефразируешь его слова</label>
+                    <label><input type="radio" name="q4" value="В"> В) Когда ты быстро киваешь и говоришь «угу» каждые 3 секунды</label>
+                    <label><input type="radio" name="q4" value="Г"> Г) Когда ты молчишь и ничего не показываешь</label>
+                </div>
+
+                <!-- Вопрос 5 -->
+                <div class="question-block">
+                    <p>5. Какая фраза помогает показать, что ты слушаешь?</p>
+                    <label><input type="radio" name="q5" value="А"> А) «То есть ты чувствуешь себя одиноко, я правильно понимаю?»</label>
+                    <label><input type="radio" name="q5" value="Б"> Б) «Да ладно, у всех так бывает»</label>
+                    <label><input type="radio" name="q5" value="В"> В) «Я тоже через это проходил, слушай…»</label>
+                    <label><input type="radio" name="q5" value="Г"> Г) «Тебе нужно просто отвлечься»</label>
+                </div>
+
+                <!-- Вопрос 6 -->
+                <div class="question-block">
+                    <p>6. Какая фраза является поддерживающей?</p>
+                    <label><input type="radio" name="q6" value="А"> А) «Не преувеличивай, всё не так плохо»</label>
+                    <label><input type="radio" name="q6" value="Б"> Б) «Я с тобой, я тебя слышу»</label>
+                    <label><input type="radio" name="q6" value="В"> В) «Ты сам виноват»</label>
+                    <label><input type="radio" name="q6" value="Г"> Г) «Давай быстрее рассказывай, у меня мало времени»</label>
+                </div>
+
+                <!-- Вопрос 7 -->
+                <div class="question-block">
+                    <p>7. Какую ошибку в общении лучше не допускать?</p>
+                    <label><input type="radio" name="q7" value="А"> А) Сразу давать советы, не спросив, хочет ли человек их услышать</label>
+                    <label><input type="radio" name="q7" value="Б"> Б) Задавать уточняющие вопросы</label>
+                    <label><input type="radio" name="q7" value="В"> В) Делать паузы в разговоре</label>
+                    <label><input type="radio" name="q7" value="Г"> Г) Перефразировать слова собеседника</label>
+                </div>
+
+                <!-- Вопрос 8 -->
+                <div class="question-block">
+                    <p>8. Что лучше сделать, если очень хочется дать совет?</p>
+                    <label><input type="radio" name="q8" value="А"> А) Сразу его сказать</label>
+                    <label><input type="radio" name="q8" value="Б"> Б) Спросить: «Хочешь, я поделюсь своими мыслями или пока просто послушать?»</label>
+                    <label><input type="radio" name="q8" value="В"> В) Сказать «Всё будет хорошо!»</label>
+                    <label><input type="radio" name="q8" value="Г"> Г) Сменить тему</label>
+                </div>
+
+                <button type="button" class="test-btn" id="submitTest">
+                    <i class="fa-solid fa-check"></i> Завершить тест
+                </button>
+            </form>
+
+            <!-- Блок результата -->
+            <div class="result-box" id="resultBox">
+                <i class="fa-solid fa-circle-info"></i>
+                <span id="resultText"></span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__block">
+                <p class="footer__label">Горячая линия</p>
+                <a href="tel:88000000000" class="footer__phone"><i class="fa-solid fa-phone"></i> 8-800-000-00-00</a>
+            </div>
+            <div class="footer__block">
+                <p class="footer__label">Телефон доверия</p>
+                <a href="tel:88001111111" class="footer__phone"><i class="fa-solid fa-phone"></i> 8-800-111-11-11</a>
+            </div>
+            <div class="footer__block">
+                <p class="footer__label">Экстренная помощь</p>
+                <a href="tel:+70000000000" class="footer__phone"><i class="fa-solid fa-phone"></i> +7 (000) 000-00-00</a>
+            </div>
+        </div>
+        <p class="footer__bottom">Если вам нужна помощь — не оставайтесь одни. Позвоните по одному из номеров выше.</p>
+    </footer>
+
+    <!-- ==================== JS: Логика теста ==================== -->
+    <script>
+        (function() {
+            // Правильные ответы (ключ — буква варианта)
+            const correctAnswers = {
+                q1: 'Б',
+                q2: 'Б',
+                q3: 'А',
+                q4: 'Б',
+                q5: 'А',
+                q6: 'Б',
+                q7: 'А',
+                q8: 'Б'
+            };
+
+            const submitBtn = document.getElementById('submitTest');
+            const resultBox = document.getElementById('resultBox');
+            const resultText = document.getElementById('resultText');
+            const quizForm = document.getElementById('quizForm');
+
+            submitBtn.addEventListener('click', function() {
+                let score = 0;
+                const total = Object.keys(correctAnswers).length;
+                let allAnswered = true;
+
+                // Проверяем, все ли вопросы имеют выбранный ответ
+                for (const [name, correctValue] of Object.entries(correctAnswers)) {
+                    const selected = quizForm.querySelector(`input[name="${name}"]:checked`);
+                    if (!selected) {
+                        allAnswered = false;
+                        break;
+                    }
+                }
+
+                if (!allAnswered) {
+                    // Подсвечиваем результат с просьбой ответить на все вопросы
+                    resultBox.classList.add('visible');
+                    resultBox.style.background = '#fff4e5';
+                    resultBox.style.borderColor = '#e6c78f';
+                    resultText.innerHTML = '<strong>Пожалуйста, ответьте на все вопросы перед завершением теста.</strong>';
+                    resultText.style.color = '#8a5d1c';
+                    resultBox.querySelector('i').className = 'fa-solid fa-exclamation-triangle';
+                    resultBox.querySelector('i').style.color = '#c28b2c';
+                    return;
+                }
+
+                // Подсчет правильных ответов
+                for (const [name, correctValue] of Object.entries(correctAnswers)) {
+                    const selected = quizForm.querySelector(`input[name="${name}"]:checked`);
+                    if (selected && selected.value === correctValue) {
+                        score++;
+                    }
+                }
+
+                // Отображаем результат (только баллы, без детализации)
+                resultBox.classList.add('visible');
+                resultBox.style.background = '#eef5fc';
+                resultBox.style.borderColor = '#c5d9ec';
+                resultText.style.color = 'var(--dark-blue)';
+                resultBox.querySelector('i').className = 'fa-solid fa-circle-check';
+                resultBox.querySelector('i').style.color = 'var(--primary-blue)';
+
+                let message = '';
+                if (score === total) {
+                    message = `Отлично! Ты набрал(а) ${score} из ${total} баллов. Ты прекрасно усвоил(а) материал!`;
+                } else if (score >= 5) {
+                    message = `Хорошо! Ты набрал(а) ${score} из ${total} баллов. Рекомендуем ещё раз просмотреть ключевые разделы.`;
+                } else {
+                    message = `Ты набрал(а) ${score} из ${total} баллов. Советуем внимательно перечитать материал и попробовать снова.`;
+                }
+                resultText.textContent = message;
+
+                // Плавный скролл к результату
+                resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        })();
+    </script>
+
+</body>
+</html>
