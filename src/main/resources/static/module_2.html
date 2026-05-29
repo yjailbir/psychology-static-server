@@ -8,7 +8,8 @@
     <!-- Google Fonts (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap"
+          rel="stylesheet">
 
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -75,6 +76,7 @@
             z-index: 100;
             box-shadow: 0 2px 20px rgba(15, 36, 53, 0.25);
         }
+
         .header__inner {
             max-width: 1200px;
             margin: 0 auto;
@@ -83,11 +85,13 @@
             justify-content: space-between;
             height: 64px;
         }
+
         .header__left {
             display: flex;
             align-items: center;
             gap: 12px;
         }
+
         .header__icon {
             width: 36px;
             height: 36px;
@@ -99,6 +103,7 @@
             font-size: 18px;
             color: #c9ddf0;
         }
+
         .header__title {
             font-size: 1.05rem;
             font-weight: 600;
@@ -106,6 +111,7 @@
             letter-spacing: 0.3px;
             line-height: 1.2;
         }
+
         .header__subtitle {
             display: block;
             font-size: 0.7rem;
@@ -114,6 +120,7 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
         }
+
         .header__back {
             display: inline-flex;
             align-items: center;
@@ -128,11 +135,13 @@
             border-radius: 50px;
             white-space: nowrap;
         }
+
         .header__back:hover {
             color: #ffffff;
             border-color: rgba(255, 255, 255, 0.35);
             background: rgba(255, 255, 255, 0.05);
         }
+
         .header__back i {
             font-size: 0.8rem;
         }
@@ -158,6 +167,7 @@
             align-items: flex-start;
             gap: 20px;
         }
+
         .module-header__icon {
             width: 56px;
             height: 56px;
@@ -171,6 +181,7 @@
             flex-shrink: 0;
             margin-top: 2px;
         }
+
         .module-header__text h1 {
             font-size: 1.5rem;
             font-weight: 700;
@@ -178,6 +189,7 @@
             letter-spacing: -0.2px;
             margin-bottom: 4px;
         }
+
         .module-header__text .subtitle {
             font-size: 0.9rem;
             color: var(--text-muted);
@@ -194,9 +206,11 @@
             border: 1px solid var(--border-subtle);
             transition: box-shadow var(--transition);
         }
+
         .section-card:hover {
             box-shadow: var(--shadow-md);
         }
+
         .section-card h2 {
             font-size: 1.2rem;
             font-weight: 650;
@@ -207,12 +221,14 @@
             gap: 10px;
             letter-spacing: -0.1px;
         }
+
         .section-card h2 i {
             color: var(--primary-blue);
             font-size: 1rem;
             width: 28px;
             text-align: center;
         }
+
         .section-card h3 {
             font-size: 1rem;
             font-weight: 600;
@@ -220,6 +236,7 @@
             margin: 16px 0 8px;
             letter-spacing: -0.1px;
         }
+
         .section-card p,
         .section-card li {
             color: var(--text-medium);
@@ -227,15 +244,18 @@
             line-height: 1.65;
             margin-bottom: 6px;
         }
+
         .section-card ul {
             list-style: none;
             padding-left: 0;
         }
+
         .section-card ul li {
             position: relative;
             padding-left: 24px;
             margin-bottom: 8px;
         }
+
         .section-card ul li::before {
             content: '';
             position: absolute;
@@ -246,6 +266,7 @@
             border-radius: 50%;
             background: var(--light-blue);
         }
+
         .highlight-box {
             background: #f0f5fb;
             border-left: 4px solid var(--primary-blue);
@@ -256,6 +277,7 @@
             color: var(--dark-blue);
             font-size: 0.9rem;
         }
+
         .phone-number {
             font-weight: 600;
             color: var(--dark-blue);
@@ -269,6 +291,7 @@
             margin: 12px 0;
             font-size: 0.88rem;
         }
+
         .info-table th {
             background: #eef3f9;
             color: var(--dark-blue);
@@ -277,12 +300,14 @@
             text-align: left;
             border-radius: 6px 6px 0 0;
         }
+
         .info-table td {
             padding: 10px 14px;
             border-bottom: 1px solid #e9eff5;
             color: var(--text-medium);
             vertical-align: top;
         }
+
         .info-table tr:last-child td {
             border-bottom: none;
         }
@@ -296,6 +321,7 @@
             box-shadow: var(--shadow-md);
             border: 1px solid var(--border-subtle);
         }
+
         .test-section h2 {
             font-size: 1.25rem;
             font-weight: 700;
@@ -305,12 +331,14 @@
             align-items: center;
             gap: 10px;
         }
+
         .test-section .test-intro {
             font-size: 0.88rem;
             color: var(--text-muted);
             margin-bottom: 20px;
             font-weight: 400;
         }
+
         .question-block {
             background: #f9fbfd;
             border-radius: var(--radius-sm);
@@ -319,15 +347,18 @@
             border: 1px solid #e9eff5;
             transition: border-color 0.2s;
         }
+
         .question-block:hover {
             border-color: #cddae6;
         }
+
         .question-block p {
             font-weight: 600;
             color: var(--text-dark);
             font-size: 0.92rem;
             margin-bottom: 10px;
         }
+
         .question-block label {
             display: flex;
             align-items: center;
@@ -341,9 +372,11 @@
             margin-bottom: 4px;
             font-weight: 400;
         }
+
         .question-block label:hover {
             background: #eef3f9;
         }
+
         .question-block input[type="radio"] {
             accent-color: var(--primary-blue);
             width: 17px;
@@ -351,6 +384,7 @@
             flex-shrink: 0;
             cursor: pointer;
         }
+
         .test-btn {
             display: inline-flex;
             align-items: center;
@@ -367,10 +401,12 @@
             margin-top: 8px;
             letter-spacing: 0.2px;
         }
+
         .test-btn:hover {
             background: var(--medium-blue);
             box-shadow: var(--shadow-lg);
         }
+
         .test-btn i {
             font-size: 0.85rem;
         }
@@ -389,10 +425,12 @@
             align-items: center;
             gap: 12px;
         }
+
         .result-box i {
             font-size: 1.6rem;
             color: var(--primary-blue);
         }
+
         .result-box.visible {
             display: flex;
         }
@@ -404,6 +442,7 @@
             color: var(--footer-text);
             margin-top: auto;
         }
+
         .footer__inner {
             max-width: 1000px;
             margin: 0 auto;
@@ -414,10 +453,12 @@
             justify-content: center;
             text-align: center;
         }
+
         .footer__block {
             flex: 1 1 200px;
             min-width: 160px;
         }
+
         .footer__label {
             font-size: 0.7rem;
             font-weight: 600;
@@ -426,6 +467,7 @@
             color: #7b95b0;
             margin-bottom: 6px;
         }
+
         .footer__phone {
             display: block;
             font-size: 0.95rem;
@@ -435,14 +477,17 @@
             transition: color 0.25s;
             line-height: 1.6;
         }
+
         .footer__phone:hover {
             color: #ffffff;
         }
+
         .footer__phone i {
             margin-right: 6px;
             color: #6b8fab;
             font-size: 0.8rem;
         }
+
         .footer__bottom {
             text-align: center;
             margin-top: 18px;
@@ -459,45 +504,57 @@
                 gap: 10px;
                 justify-content: space-between;
             }
+
             .header__back {
                 font-size: 0.78rem;
                 padding: 6px 12px;
             }
+
             .header__title {
                 font-size: 0.9rem;
             }
+
             .header__subtitle {
                 font-size: 0.65rem;
             }
+
             .module-header {
                 flex-direction: column;
                 gap: 12px;
                 padding: 20px;
             }
+
             .module-header__icon {
                 width: 44px;
                 height: 44px;
                 font-size: 22px;
                 border-radius: 12px;
             }
+
             .module-header__text h1 {
                 font-size: 1.3rem;
             }
+
             .section-card {
                 padding: 18px 16px;
             }
+
             .section-card h2 {
                 font-size: 1.05rem;
             }
+
             .test-section {
                 padding: 18px 14px;
             }
+
             .question-block {
                 padding: 14px 12px;
             }
+
             .question-block label {
                 font-size: 0.82rem;
             }
+
             .test-btn {
                 width: 100%;
                 justify-content: center;
@@ -507,336 +564,399 @@
 </head>
 <body>
 
-    <!-- ==================== HEADER ==================== -->
-    <header class="header">
-        <div class="header__inner">
-            <div class="header__left">
-                <div class="header__icon" aria-hidden="true">
-                    <i class="fa-solid fa-heart-pulse"></i>
-                </div>
-                <div>
-                    <span class="header__title">Модуль 2</span>
-                    <span class="header__subtitle">Первая психологическая помощь</span>
-                </div>
+<!-- ==================== HEADER ==================== -->
+<header class="header">
+    <div class="header__inner">
+        <div class="header__left">
+            <div class="header__icon" aria-hidden="true">
+                <i class="fa-solid fa-heart-pulse"></i>
             </div>
-            <a href="index.html" class="header__back" aria-label="Вернуться на главную">
-                <i class="fa-solid fa-arrow-left"></i> На главную
+            <div>
+                <span class="header__title">Модуль 2</span>
+                <span class="header__subtitle">Первая психологическая помощь</span>
+            </div>
+        </div>
+        <a href="index.html" class="header__back" aria-label="Вернуться на главную">
+            <i class="fa-solid fa-arrow-left"></i> На главную
+        </a>
+    </div>
+</header>
+
+<!-- ==================== MAIN CONTENT ==================== -->
+<main class="main-content">
+
+    <!-- Заголовок модуля -->
+    <div class="module-header">
+        <div class="module-header__icon" aria-hidden="true">
+            <i class="fa-solid fa-brain"></i>
+        </div>
+        <div class="module-header__text">
+            <h1>Понимание эмоций и стресса</h1>
+            <p class="subtitle">Как работают наши эмоции, что такое тревога и стресс, и как вовремя заметить, что
+                человеку нужна помощь.</p>
+        </div>
+    </div>
+
+    <!-- Секция 1: Что такое эмоции, тревога, стресс? -->
+    <div class="section-card">
+        <h2><i class="fa-solid fa-wave-square"></i> 1. Что такое эмоции, тревога, стресс?</h2>
+        <p><strong>Эмоции</strong> — это не «помехи» в работе мозга, а его важнейшая сигнальная система. Они возникли
+            эволюционно задолго до рационального мышления. Эмоция — это быстрая оценка ситуации: «полезно/вредно»,
+            «опасно/безопасно», «желательно/нежелательно».</p>
+        <p>Любая эмоция (даже негативная) выполняет функцию:</p>
+        <ul>
+            <li><strong>Гнев</strong> — мобилизует силы для преодоления препятствия.</li>
+            <li><strong>Страх</strong> — заставляет избегать реальной угрозы.</li>
+            <li><strong>Грусть</strong> — сигнализирует о потере и запускает процессы восстановления.</li>
+            <li><strong>Радость</strong> — закрепляет полезное поведение.</li>
+        </ul>
+        <p>Проблемы начинаются не от наличия эмоций, а от их интенсивности, длительности или неадекватности
+            ситуации.</p>
+
+        <h3>Тревога</h3>
+        <p><strong>Тревога</strong> — это эмоция, направленная в будущее. Она возникает в ответ на неопределенную
+            угрозу. Если страх говорит: «Прямо сейчас за мной бежит тигр», то тревога: «Где-то в принципе могут быть
+            тигры, или не тигры, но вдруг что-то случится».</p>
+        <p>В норме тревога помогает планировать и готовиться. В патологии она:</p>
+        <ul>
+            <li>не исчезает после устранения повода;</li>
+            <li>привязана к маловероятным событиям;</li>
+            <li>мешает жить, учиться, общаться.</li>
+        </ul>
+
+        <h3>Стресс</h3>
+        <p><strong>Стресс</strong> — это неспецифическая реакция организма на любое предъявленное ему требование (Г.
+            Селье). То есть стресс — это ответ на нагрузку, будь то экзамен, переезд, ссора или даже победа в конкурсе.
+        </p>
+        <p>Важные различения:</p>
+        <ul>
+            <li><strong>Эустресс</strong> («хороший» стресс) — мобилизует, дает ощущение преодоления, повышает
+                устойчивость.
+            </li>
+            <li><strong>Дистресс</strong> («плохой» стресс) — истощает ресурсы, разрушает организм и психику.</li>
+        </ul>
+        <p>Переход из эустресса в дистресс определяется не столько силой события, сколько <strong>длительностью и
+            отсутствием восстановления</strong>.</p>
+    </div>
+
+    <!-- Секция 2: Как понять, что человеку плохо? -->
+    <div class="section-card">
+        <h2><i class="fa-solid fa-magnifying-glass"></i> 2. Как понять, что человеку плохо?</h2>
+        <p>В психологии это называется <strong>распознавание дистресса</strong> у себя и у других. Важно: люди часто
+            скрывают страдания. Внешнее «нормально» не является надежным маркером.</p>
+        <p>Изменения, на которые стоит обратить внимание:</p>
+        <table class="info-table">
+            <thead>
+            <tr>
+                <th>Сфера</th>
+                <th>Признаки</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>Эмоциональная</strong></td>
+                <td>Раздражительность, апатия (безразличие), чувство пустоты, «эмоциональная тупость», немотивированные
+                    слезы или смех.
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Когнитивная (мысли)</strong></td>
+                <td>Плохая концентрация, навязчивые мысли («я ничтожество», «все бессмысленно»), трудности с принятием
+                    решений, пессимизм.
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Поведенческая</strong></td>
+                <td>Избегание (не отвечает на сообщения, не выходит из комнаты), рискованное поведение, резкие изменения
+                    аппетита/сна, самоповреждения.
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Телесная</strong></td>
+                <td>Головные боли напряжения, «ком в горле», дрожь, учащенное сердцебиение в покое, хроническая
+                    усталость.
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="highlight-box">
+            <i class="fa-solid fa-lightbulb" style="color: var(--primary-blue); margin-right: 6px;"></i>
+            <strong>Ключевой критерий для самодиагностики:</strong> изменение по сравнению с обычным состоянием. Если
+            тихий человек стал еще тише — это заметно. Если веселый стал агрессивным — это заметно. Если отличник
+            перестал делать уроки — это признак проблем, а не лени.
+        </div>
+    </div>
+
+    <!-- Секция 3: Признаки эмоционального кризиса -->
+    <div class="section-card">
+        <h2><i class="fa-solid fa-triangle-exclamation"></i> 3. Признаки эмоционального кризиса</h2>
+        <p><strong>Эмоциональный кризис</strong> — это состояние, в котором привычные способы совладания (отвлечься,
+            поспать, поговорить) перестают работать. Человек оказывается за гранью своей адаптации.</p>
+        <p>Ключевые признаки кризиса (что должно насторожить):</p>
+        <ul>
+            <li><strong>Чувство безвыходности</strong> — «нет решений», «не вижу будущего», «все пути ведут в тупик».
+                Это отличается от обычной грусти тем, что исключает возможность позитивных исходов.
+            </li>
+            <li><strong>Выраженная самооценка</strong> — устойчивые мысли: «я обуза», «меня не должно быть», «всем будет
+                лучше без меня».
+            </li>
+            <li><strong>Социальная отгороженность</strong> — не просто «хочется побыть одному», а полный разрыв связей,
+                игнорирование даже близких людей, отказ от помощи.
+            </li>
+            <li><strong>Потеря будущего времени</strong> — человек перестает строить планы (даже на завтра или следующую
+                неделю). Фраза «меня здесь не будет...» (в любом контексте) — тревожный маркер.
+            </li>
+            <li><strong>Рисковое / самоповреждающее поведение</strong> — порезы, ожоги, удары себя, ушибы. Часто это
+                способ физически «заглушить» невыносимую душевную боль или вернуть ощущение контроля над телом.
+            </li>
+            <li><strong>Суицидальные мысли</strong> — любой уровень: от «интересно, что было бы, если я умру» до
+                конкретных планов. Игнорировать нельзя даже мимолетные.
+            </li>
+        </ul>
+        <div class="highlight-box">
+            <strong>Очень важно:</strong><br>
+            • Кризис <strong>временен</strong>. Это нейробиологический факт: мозг не может находиться в таком состоянии
+            бесконечно. Но это не значит, что нужно ждать. Чем раньше помощь — тем меньше разрушений.<br>
+            • Нельзя «заработать» кризис силой воли. Это не слабость, это перегрузка психики.<br>
+            • Признание кризиса — это сила, а не провал.
+        </div>
+    </div>
+
+    <!-- ==================== ТЕСТ ==================== -->
+    <div class="test-section" id="test">
+        <h2><i class="fa-solid fa-clipboard-check"></i> Проверь себя</h2>
+        <p class="test-intro">Ответь на 10 вопросов, чтобы убедиться, что ты усвоил(а) материал.</p>
+
+        <form id="quizForm">
+            <!-- Вопрос 1 -->
+            <div class="question-block">
+                <p>1. Чем тревога принципиально отличается от страха?</p>
+                <label><input type="radio" name="q1" value="А"> А) Тревога всегда слабее, чем страх</label>
+                <label><input type="radio" name="q1" value="Б"> Б) Страх — реакция на реальную угрозу «здесь и сейчас»,
+                    а тревога — на неопределенную угрозу в будущем</label>
+                <label><input type="radio" name="q1" value="В"> В) Тревога бывает только у людей, а страх — у всех
+                    животных</label>
+                <label><input type="radio" name="q1" value="Г"> Г) Страх вреден для здоровья, а тревога полезна</label>
+            </div>
+
+            <!-- Вопрос 2 -->
+            <div class="question-block">
+                <p>2. Что такое эустресс?</p>
+                <label><input type="radio" name="q2" value="А"> А) Стресс, который приводит к психозу</label>
+                <label><input type="radio" name="q2" value="Б"> Б) Стресс после употребления стимуляторов</label>
+                <label><input type="radio" name="q2" value="В"> В) «Хороший» стресс, который мобилизует организм и дает
+                    ощущение преодоления</label>
+                <label><input type="radio" name="q2" value="Г"> Г) Стадия истощения при стрессе</label>
+            </div>
+
+            <!-- Вопрос 3 -->
+            <div class="question-block">
+                <p>3. Какой из перечисленных признаков НЕ является телесным (соматическим) симптомом дистресса?</p>
+                <label><input type="radio" name="q3" value="А"> А) Хроническая усталость</label>
+                <label><input type="radio" name="q3" value="Б"> Б) Головные боли напряжения</label>
+                <label><input type="radio" name="q3" value="В"> В) Избегание общения с друзьями</label>
+                <label><input type="radio" name="q3" value="Г"> Г) Дрожь в руках</label>
+            </div>
+
+            <!-- Вопрос 4 -->
+            <div class="question-block">
+                <p>4. Сколько времени должны длиться изменения в поведении или настроении, чтобы это стало поводом для
+                    беспокойства?</p>
+                <label><input type="radio" name="q4" value="А"> А) 2–3 дня</label>
+                <label><input type="radio" name="q4" value="Б"> Б) Более 2 недель</label>
+                <label><input type="radio" name="q4" value="В"> В) Около месяца</label>
+                <label><input type="radio" name="q4" value="Г"> Г) Любые изменения — сразу повод для паники</label>
+            </div>
+
+            <!-- Вопрос 5 -->
+            <div class="question-block">
+                <p>5. Какая фраза является наиболее тревожным маркером эмоционального кризиса?</p>
+                <label><input type="radio" name="q5" value="А"> А) «Я не выучил уроки»</label>
+                <label><input type="radio" name="q5" value="Б"> Б) «Меня бесит этот учитель»</label>
+                <label><input type="radio" name="q5" value="В"> В) «Какая разница, что будет на следующей
+                    неделе»</label>
+                <label><input type="radio" name="q5" value="Г"> Г) «Я хочу побыть один сегодня вечером»</label>
+            </div>
+
+            <!-- Вопрос 6 -->
+            <div class="question-block">
+                <p>6. Почему нельзя полагаться на фразу «у меня всё нормально» при оценке состояния другого
+                    человека?</p>
+                <label><input type="radio" name="q6" value="А"> А) Потому что люди всегда врут</label>
+                <label><input type="radio" name="q6" value="Б"> Б) Потому что подростки часто скрывают страдания из-за
+                    стыда или неумения выразить состояние</label>
+                <label><input type="radio" name="q6" value="В"> В) Потому что слово «нормально» не имеет точного
+                    значения</label>
+                <label><input type="radio" name="q6" value="Г"> Г) Потому что спрашивать о состоянии вообще бессмысленно</label>
+            </div>
+
+            <!-- Вопрос 7 -->
+            <div class="question-block">
+                <p>7. Что из перечисленного является признаком «потери будущего времени»?</p>
+                <label><input type="radio" name="q7" value="А"> А) Человек перестал делать домашние задания</label>
+                <label><input type="radio" name="q7" value="Б"> Б) Человек не строит планов даже на завтра или следующую
+                    неделю</label>
+                <label><input type="radio" name="q7" value="В"> В) Человек постоянно опаздывает на встречи</label>
+                <label><input type="radio" name="q7" value="Г"> Г) Человек смотрит сериалы вместо подготовки к экзамену</label>
+            </div>
+
+            <!-- Вопрос 8 -->
+            <div class="question-block">
+                <p>8. Какое утверждение о стрессовой реакции является верным?</p>
+                <label><input type="radio" name="q8" value="А"> А) Стресс всегда вреден и его нужно избегать любой ценой</label>
+                <label><input type="radio" name="q8" value="Б"> Б) Организм одинаково реагирует на позитивные и
+                    негативные нагрузки</label>
+                <label><input type="radio" name="q8" value="В"> В) Дистресс возникает только при очень сильных
+                    травмирующих событиях</label>
+                <label><input type="radio" name="q8" value="Г"> Г) Переход из эустресса в дистресс определяется только
+                    силой события</label>
+            </div>
+
+            <!-- Вопрос 9 -->
+            <div class="question-block">
+                <p>9. Вы заметили, что друг стал агрессивным на ровном месте, перестал выходить из дома и говорит «все
+                    бессмысленно». Какое действие будет наиболее правильным?</p>
+                <label><input type="radio" name="q9" value="А"> А) Оставить его в покое — «сам разберется»</label>
+                <label><input type="radio" name="q9" value="Б"> Б) Сказать «возьми себя в руки, не ной»</label>
+                <label><input type="radio" name="q9" value="В"> В) Аккуратно спросить, предложить помощь взрослого или
+                    номер телефона доверия</label>
+                <label><input type="radio" name="q9" value="Г"> Г) Рассказать всем общим знакомым о его
+                    состоянии</label>
+            </div>
+
+            <!-- Вопрос 10 -->
+            <div class="question-block">
+                <p>10. Какое утверждение об эмоциональном кризисе является НЕВЕРНЫМ?</p>
+                <label><input type="radio" name="q10" value="А"> А) Кризис — это временное состояние</label>
+                <label><input type="radio" name="q10" value="Б"> Б) Человек в кризисе часто не просит о помощи
+                    явно</label>
+                <label><input type="radio" name="q10" value="В"> В) Если человек в кризисе, он может думать, что выхода
+                    нет</label>
+                <label><input type="radio" name="q10" value="Г"> Г) Если не обращать внимания, кризис пройдет сам собой
+                    без последствий</label>
+            </div>
+
+            <button type="button" class="test-btn" id="submitTest">
+                <i class="fa-solid fa-check"></i> Завершить тест
+            </button>
+        </form>
+
+        <!-- Блок результата -->
+        <div class="result-box" id="resultBox">
+            <i class="fa-solid fa-circle-info"></i>
+            <span id="resultText"></span>
+        </div>
+    </div>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__block">
+            <p class="footer__label">Психологическая служба КФУ</p>
+            <p class="footer__label">(Телефон доверия)</p>
+            <a class="footer__phone">
+                <i class="fa-solid fa-phone"></i> 8-800-600-8996
             </a>
         </div>
-    </header>
-
-    <!-- ==================== MAIN CONTENT ==================== -->
-    <main class="main-content">
-
-        <!-- Заголовок модуля -->
-        <div class="module-header">
-            <div class="module-header__icon" aria-hidden="true">
-                <i class="fa-solid fa-brain"></i>
-            </div>
-            <div class="module-header__text">
-                <h1>Понимание эмоций и стресса</h1>
-                <p class="subtitle">Как работают наши эмоции, что такое тревога и стресс, и как вовремя заметить, что человеку нужна помощь.</p>
-            </div>
+        <div class="footer__block">
+            <p class="footer__label">Психологическая служба Сердэш</p>
+            <p class="footer__label">(Бесплатная консультация психолога для подростков)</p>
+            <a class="footer__phone">
+                <i class="fa-solid fa-phone"></i> 8-843-598-33-73
+            </a>
         </div>
-
-        <!-- Секция 1: Что такое эмоции, тревога, стресс? -->
-        <div class="section-card">
-            <h2><i class="fa-solid fa-wave-square"></i> 1. Что такое эмоции, тревога, стресс?</h2>
-            <p><strong>Эмоции</strong> — это не «помехи» в работе мозга, а его важнейшая сигнальная система. Они возникли эволюционно задолго до рационального мышления. Эмоция — это быстрая оценка ситуации: «полезно/вредно», «опасно/безопасно», «желательно/нежелательно».</p>
-            <p>Любая эмоция (даже негативная) выполняет функцию:</p>
-            <ul>
-                <li><strong>Гнев</strong> — мобилизует силы для преодоления препятствия.</li>
-                <li><strong>Страх</strong> — заставляет избегать реальной угрозы.</li>
-                <li><strong>Грусть</strong> — сигнализирует о потере и запускает процессы восстановления.</li>
-                <li><strong>Радость</strong> — закрепляет полезное поведение.</li>
-            </ul>
-            <p>Проблемы начинаются не от наличия эмоций, а от их интенсивности, длительности или неадекватности ситуации.</p>
-
-            <h3>Тревога</h3>
-            <p><strong>Тревога</strong> — это эмоция, направленная в будущее. Она возникает в ответ на неопределенную угрозу. Если страх говорит: «Прямо сейчас за мной бежит тигр», то тревога: «Где-то в принципе могут быть тигры, или не тигры, но вдруг что-то случится».</p>
-            <p>В норме тревога помогает планировать и готовиться. В патологии она:</p>
-            <ul>
-                <li>не исчезает после устранения повода;</li>
-                <li>привязана к маловероятным событиям;</li>
-                <li>мешает жить, учиться, общаться.</li>
-            </ul>
-
-            <h3>Стресс</h3>
-            <p><strong>Стресс</strong> — это неспецифическая реакция организма на любое предъявленное ему требование (Г. Селье). То есть стресс — это ответ на нагрузку, будь то экзамен, переезд, ссора или даже победа в конкурсе.</p>
-            <p>Важные различения:</p>
-            <ul>
-                <li><strong>Эустресс</strong> («хороший» стресс) — мобилизует, дает ощущение преодоления, повышает устойчивость.</li>
-                <li><strong>Дистресс</strong> («плохой» стресс) — истощает ресурсы, разрушает организм и психику.</li>
-            </ul>
-            <p>Переход из эустресса в дистресс определяется не столько силой события, сколько <strong>длительностью и отсутствием восстановления</strong>.</p>
+        <div class="footer__block">
+            <p class="footer__label">Единый общероссийский номер</p>
+            <p class="footer__label">(работает бесплатно со всех мобильных операторов)</p>
+            <a class="footer__phone">
+                <i class="fa-solid fa-phone"></i> 8-800-2000-122
+            </a>
         </div>
+    </div>
+    <p class="footer__bottom">Если вам нужна помощь — не оставайтесь одни. Позвоните по одному из номеров выше.</p>
+</footer>
 
-        <!-- Секция 2: Как понять, что человеку плохо? -->
-        <div class="section-card">
-            <h2><i class="fa-solid fa-magnifying-glass"></i> 2. Как понять, что человеку плохо?</h2>
-            <p>В психологии это называется <strong>распознавание дистресса</strong> у себя и у других. Важно: люди часто скрывают страдания. Внешнее «нормально» не является надежным маркером.</p>
-            <p>Изменения, на которые стоит обратить внимание:</p>
-            <table class="info-table">
-                <thead>
-                    <tr>
-                        <th>Сфера</th>
-                        <th>Признаки</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Эмоциональная</strong></td>
-                        <td>Раздражительность, апатия (безразличие), чувство пустоты, «эмоциональная тупость», немотивированные слезы или смех.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Когнитивная (мысли)</strong></td>
-                        <td>Плохая концентрация, навязчивые мысли («я ничтожество», «все бессмысленно»), трудности с принятием решений, пессимизм.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Поведенческая</strong></td>
-                        <td>Избегание (не отвечает на сообщения, не выходит из комнаты), рискованное поведение, резкие изменения аппетита/сна, самоповреждения.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Телесная</strong></td>
-                        <td>Головные боли напряжения, «ком в горле», дрожь, учащенное сердцебиение в покое, хроническая усталость.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="highlight-box">
-                <i class="fa-solid fa-lightbulb" style="color: var(--primary-blue); margin-right: 6px;"></i>
-                <strong>Ключевой критерий для самодиагностики:</strong> изменение по сравнению с обычным состоянием. Если тихий человек стал еще тише — это заметно. Если веселый стал агрессивным — это заметно. Если отличник перестал делать уроки — это признак проблем, а не лени.
-            </div>
-        </div>
+<!-- ==================== JS: Логика теста ==================== -->
+<script>
+    (function () {
+        // Правильные ответы (ключ — буква варианта)
+        const correctAnswers = {
+            q1: 'Б',
+            q2: 'В',
+            q3: 'В',
+            q4: 'Б',
+            q5: 'В',
+            q6: 'Б',
+            q7: 'Б',
+            q8: 'Б',
+            q9: 'В',
+            q10: 'Г'
+        };
 
-        <!-- Секция 3: Признаки эмоционального кризиса -->
-        <div class="section-card">
-            <h2><i class="fa-solid fa-triangle-exclamation"></i> 3. Признаки эмоционального кризиса</h2>
-            <p><strong>Эмоциональный кризис</strong> — это состояние, в котором привычные способы совладания (отвлечься, поспать, поговорить) перестают работать. Человек оказывается за гранью своей адаптации.</p>
-            <p>Ключевые признаки кризиса (что должно насторожить):</p>
-            <ul>
-                <li><strong>Чувство безвыходности</strong> — «нет решений», «не вижу будущего», «все пути ведут в тупик». Это отличается от обычной грусти тем, что исключает возможность позитивных исходов.</li>
-                <li><strong>Выраженная самооценка</strong> — устойчивые мысли: «я обуза», «меня не должно быть», «всем будет лучше без меня».</li>
-                <li><strong>Социальная отгороженность</strong> — не просто «хочется побыть одному», а полный разрыв связей, игнорирование даже близких людей, отказ от помощи.</li>
-                <li><strong>Потеря будущего времени</strong> — человек перестает строить планы (даже на завтра или следующую неделю). Фраза «меня здесь не будет...» (в любом контексте) — тревожный маркер.</li>
-                <li><strong>Рисковое / самоповреждающее поведение</strong> — порезы, ожоги, удары себя, ушибы. Часто это способ физически «заглушить» невыносимую душевную боль или вернуть ощущение контроля над телом.</li>
-                <li><strong>Суицидальные мысли</strong> — любой уровень: от «интересно, что было бы, если я умру» до конкретных планов. Игнорировать нельзя даже мимолетные.</li>
-            </ul>
-            <div class="highlight-box">
-                <strong>Очень важно:</strong><br>
-                • Кризис <strong>временен</strong>. Это нейробиологический факт: мозг не может находиться в таком состоянии бесконечно. Но это не значит, что нужно ждать. Чем раньше помощь — тем меньше разрушений.<br>
-                • Нельзя «заработать» кризис силой воли. Это не слабость, это перегрузка психики.<br>
-                • Признание кризиса — это сила, а не провал.
-            </div>
-        </div>
+        const submitBtn = document.getElementById('submitTest');
+        const resultBox = document.getElementById('resultBox');
+        const resultText = document.getElementById('resultText');
+        const quizForm = document.getElementById('quizForm');
 
-        <!-- ==================== ТЕСТ ==================== -->
-        <div class="test-section" id="test">
-            <h2><i class="fa-solid fa-clipboard-check"></i> Проверь себя</h2>
-            <p class="test-intro">Ответь на 10 вопросов, чтобы убедиться, что ты усвоил(а) материал.</p>
+        submitBtn.addEventListener('click', function () {
+            let score = 0;
+            const total = Object.keys(correctAnswers).length;
+            let allAnswered = true;
 
-            <form id="quizForm">
-                <!-- Вопрос 1 -->
-                <div class="question-block">
-                    <p>1. Чем тревога принципиально отличается от страха?</p>
-                    <label><input type="radio" name="q1" value="А"> А) Тревога всегда слабее, чем страх</label>
-                    <label><input type="radio" name="q1" value="Б"> Б) Страх — реакция на реальную угрозу «здесь и сейчас», а тревога — на неопределенную угрозу в будущем</label>
-                    <label><input type="radio" name="q1" value="В"> В) Тревога бывает только у людей, а страх — у всех животных</label>
-                    <label><input type="radio" name="q1" value="Г"> Г) Страх вреден для здоровья, а тревога полезна</label>
-                </div>
-
-                <!-- Вопрос 2 -->
-                <div class="question-block">
-                    <p>2. Что такое эустресс?</p>
-                    <label><input type="radio" name="q2" value="А"> А) Стресс, который приводит к психозу</label>
-                    <label><input type="radio" name="q2" value="Б"> Б) Стресс после употребления стимуляторов</label>
-                    <label><input type="radio" name="q2" value="В"> В) «Хороший» стресс, который мобилизует организм и дает ощущение преодоления</label>
-                    <label><input type="radio" name="q2" value="Г"> Г) Стадия истощения при стрессе</label>
-                </div>
-
-                <!-- Вопрос 3 -->
-                <div class="question-block">
-                    <p>3. Какой из перечисленных признаков НЕ является телесным (соматическим) симптомом дистресса?</p>
-                    <label><input type="radio" name="q3" value="А"> А) Хроническая усталость</label>
-                    <label><input type="radio" name="q3" value="Б"> Б) Головные боли напряжения</label>
-                    <label><input type="radio" name="q3" value="В"> В) Избегание общения с друзьями</label>
-                    <label><input type="radio" name="q3" value="Г"> Г) Дрожь в руках</label>
-                </div>
-
-                <!-- Вопрос 4 -->
-                <div class="question-block">
-                    <p>4. Сколько времени должны длиться изменения в поведении или настроении, чтобы это стало поводом для беспокойства?</p>
-                    <label><input type="radio" name="q4" value="А"> А) 2–3 дня</label>
-                    <label><input type="radio" name="q4" value="Б"> Б) Более 2 недель</label>
-                    <label><input type="radio" name="q4" value="В"> В) Около месяца</label>
-                    <label><input type="radio" name="q4" value="Г"> Г) Любые изменения — сразу повод для паники</label>
-                </div>
-
-                <!-- Вопрос 5 -->
-                <div class="question-block">
-                    <p>5. Какая фраза является наиболее тревожным маркером эмоционального кризиса?</p>
-                    <label><input type="radio" name="q5" value="А"> А) «Я не выучил уроки»</label>
-                    <label><input type="radio" name="q5" value="Б"> Б) «Меня бесит этот учитель»</label>
-                    <label><input type="radio" name="q5" value="В"> В) «Какая разница, что будет на следующей неделе»</label>
-                    <label><input type="radio" name="q5" value="Г"> Г) «Я хочу побыть один сегодня вечером»</label>
-                </div>
-
-                <!-- Вопрос 6 -->
-                <div class="question-block">
-                    <p>6. Почему нельзя полагаться на фразу «у меня всё нормально» при оценке состояния другого человека?</p>
-                    <label><input type="radio" name="q6" value="А"> А) Потому что люди всегда врут</label>
-                    <label><input type="radio" name="q6" value="Б"> Б) Потому что подростки часто скрывают страдания из-за стыда или неумения выразить состояние</label>
-                    <label><input type="radio" name="q6" value="В"> В) Потому что слово «нормально» не имеет точного значения</label>
-                    <label><input type="radio" name="q6" value="Г"> Г) Потому что спрашивать о состоянии вообще бессмысленно</label>
-                </div>
-
-                <!-- Вопрос 7 -->
-                <div class="question-block">
-                    <p>7. Что из перечисленного является признаком «потери будущего времени»?</p>
-                    <label><input type="radio" name="q7" value="А"> А) Человек перестал делать домашние задания</label>
-                    <label><input type="radio" name="q7" value="Б"> Б) Человек не строит планов даже на завтра или следующую неделю</label>
-                    <label><input type="radio" name="q7" value="В"> В) Человек постоянно опаздывает на встречи</label>
-                    <label><input type="radio" name="q7" value="Г"> Г) Человек смотрит сериалы вместо подготовки к экзамену</label>
-                </div>
-
-                <!-- Вопрос 8 -->
-                <div class="question-block">
-                    <p>8. Какое утверждение о стрессовой реакции является верным?</p>
-                    <label><input type="radio" name="q8" value="А"> А) Стресс всегда вреден и его нужно избегать любой ценой</label>
-                    <label><input type="radio" name="q8" value="Б"> Б) Организм одинаково реагирует на позитивные и негативные нагрузки</label>
-                    <label><input type="radio" name="q8" value="В"> В) Дистресс возникает только при очень сильных травмирующих событиях</label>
-                    <label><input type="radio" name="q8" value="Г"> Г) Переход из эустресса в дистресс определяется только силой события</label>
-                </div>
-
-                <!-- Вопрос 9 -->
-                <div class="question-block">
-                    <p>9. Вы заметили, что друг стал агрессивным на ровном месте, перестал выходить из дома и говорит «все бессмысленно». Какое действие будет наиболее правильным?</p>
-                    <label><input type="radio" name="q9" value="А"> А) Оставить его в покое — «сам разберется»</label>
-                    <label><input type="radio" name="q9" value="Б"> Б) Сказать «возьми себя в руки, не ной»</label>
-                    <label><input type="radio" name="q9" value="В"> В) Аккуратно спросить, предложить помощь взрослого или номер телефона доверия</label>
-                    <label><input type="radio" name="q9" value="Г"> Г) Рассказать всем общим знакомым о его состоянии</label>
-                </div>
-
-                <!-- Вопрос 10 -->
-                <div class="question-block">
-                    <p>10. Какое утверждение об эмоциональном кризисе является НЕВЕРНЫМ?</p>
-                    <label><input type="radio" name="q10" value="А"> А) Кризис — это временное состояние</label>
-                    <label><input type="radio" name="q10" value="Б"> Б) Человек в кризисе часто не просит о помощи явно</label>
-                    <label><input type="radio" name="q10" value="В"> В) Если человек в кризисе, он может думать, что выхода нет</label>
-                    <label><input type="radio" name="q10" value="Г"> Г) Если не обращать внимания, кризис пройдет сам собой без последствий</label>
-                </div>
-
-                <button type="button" class="test-btn" id="submitTest">
-                    <i class="fa-solid fa-check"></i> Завершить тест
-                </button>
-            </form>
-
-            <!-- Блок результата -->
-            <div class="result-box" id="resultBox">
-                <i class="fa-solid fa-circle-info"></i>
-                <span id="resultText"></span>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="footer">
-        <div class="footer__inner">
-            <div class="footer__block">
-                <p class="footer__label">Горячая линия</p>
-                <a href="tel:88000000000" class="footer__phone"><i class="fa-solid fa-phone"></i> 8-800-000-00-00</a>
-            </div>
-            <div class="footer__block">
-                <p class="footer__label">Телефон доверия</p>
-                <a href="tel:88001111111" class="footer__phone"><i class="fa-solid fa-phone"></i> 8-800-111-11-11</a>
-            </div>
-            <div class="footer__block">
-                <p class="footer__label">Экстренная помощь</p>
-                <a href="tel:+70000000000" class="footer__phone"><i class="fa-solid fa-phone"></i> +7 (000) 000-00-00</a>
-            </div>
-        </div>
-        <p class="footer__bottom">Если вам нужна помощь — не оставайтесь одни. Позвоните по одному из номеров выше.</p>
-    </footer>
-
-    <!-- ==================== JS: Логика теста ==================== -->
-    <script>
-        (function() {
-            // Правильные ответы (ключ — буква варианта)
-            const correctAnswers = {
-                q1: 'Б',
-                q2: 'В',
-                q3: 'В',
-                q4: 'Б',
-                q5: 'В',
-                q6: 'Б',
-                q7: 'Б',
-                q8: 'Б',
-                q9: 'В',
-                q10: 'Г'
-            };
-
-            const submitBtn = document.getElementById('submitTest');
-            const resultBox = document.getElementById('resultBox');
-            const resultText = document.getElementById('resultText');
-            const quizForm = document.getElementById('quizForm');
-
-            submitBtn.addEventListener('click', function() {
-                let score = 0;
-                const total = Object.keys(correctAnswers).length;
-                let allAnswered = true;
-
-                // Проверяем, все ли вопросы имеют выбранный ответ
-                for (const [name, correctValue] of Object.entries(correctAnswers)) {
-                    const selected = quizForm.querySelector(`input[name="${name}"]:checked`);
-                    if (!selected) {
-                        allAnswered = false;
-                        break;
-                    }
+            // Проверяем, все ли вопросы имеют выбранный ответ
+            for (const [name, correctValue] of Object.entries(correctAnswers)) {
+                const selected = quizForm.querySelector(`input[name="${name}"]:checked`);
+                if (!selected) {
+                    allAnswered = false;
+                    break;
                 }
+            }
 
-                if (!allAnswered) {
-                    // Подсвечиваем результат с просьбой ответить на все вопросы
-                    resultBox.classList.add('visible');
-                    resultBox.style.background = '#fff4e5';
-                    resultBox.style.borderColor = '#e6c78f';
-                    resultText.innerHTML = '<strong>Пожалуйста, ответьте на все вопросы перед завершением теста.</strong>';
-                    resultText.style.color = '#8a5d1c';
-                    resultBox.querySelector('i').className = 'fa-solid fa-exclamation-triangle';
-                    resultBox.querySelector('i').style.color = '#c28b2c';
-                    return;
-                }
-
-                // Подсчет правильных ответов
-                for (const [name, correctValue] of Object.entries(correctAnswers)) {
-                    const selected = quizForm.querySelector(`input[name="${name}"]:checked`);
-                    if (selected && selected.value === correctValue) {
-                        score++;
-                    }
-                }
-
-                // Отображаем результат (только баллы, без детализации)
+            if (!allAnswered) {
+                // Подсвечиваем результат с просьбой ответить на все вопросы
                 resultBox.classList.add('visible');
-                resultBox.style.background = '#eef5fc';
-                resultBox.style.borderColor = '#c5d9ec';
-                resultText.style.color = 'var(--dark-blue)';
-                resultBox.querySelector('i').className = 'fa-solid fa-circle-check';
-                resultBox.querySelector('i').style.color = 'var(--primary-blue)';
+                resultBox.style.background = '#fff4e5';
+                resultBox.style.borderColor = '#e6c78f';
+                resultText.innerHTML = '<strong>Пожалуйста, ответьте на все вопросы перед завершением теста.</strong>';
+                resultText.style.color = '#8a5d1c';
+                resultBox.querySelector('i').className = 'fa-solid fa-exclamation-triangle';
+                resultBox.querySelector('i').style.color = '#c28b2c';
+                return;
+            }
 
-                let message = '';
-                if (score === total) {
-                    message = `Отлично! Ты набрал(а) ${score} из ${total} баллов. Ты прекрасно усвоил(а) материал!`;
-                } else if (score >= 7) {
-                    message = `Хорошо! Ты набрал(а) ${score} из ${total} баллов. Рекомендуем ещё раз просмотреть ключевые разделы.`;
-                } else {
-                    message = `Ты набрал(а) ${score} из ${total} баллов. Советуем внимательно перечитать материал и попробовать снова.`;
+            // Подсчет правильных ответов
+            for (const [name, correctValue] of Object.entries(correctAnswers)) {
+                const selected = quizForm.querySelector(`input[name="${name}"]:checked`);
+                if (selected && selected.value === correctValue) {
+                    score++;
                 }
-                resultText.textContent = message;
+            }
 
-                // Плавный скролл к результату
-                resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            });
-        })();
-    </script>
+            // Отображаем результат (только баллы, без детализации)
+            resultBox.classList.add('visible');
+            resultBox.style.background = '#eef5fc';
+            resultBox.style.borderColor = '#c5d9ec';
+            resultText.style.color = 'var(--dark-blue)';
+            resultBox.querySelector('i').className = 'fa-solid fa-circle-check';
+            resultBox.querySelector('i').style.color = 'var(--primary-blue)';
+
+            let message = '';
+            if (score === total) {
+                message = `Отлично! Ты набрал(а) ${score} из ${total} баллов. Ты прекрасно усвоил(а) материал!`;
+            } else if (score >= 7) {
+                message = `Хорошо! Ты набрал(а) ${score} из ${total} баллов. Рекомендуем ещё раз просмотреть ключевые разделы.`;
+            } else {
+                message = `Ты набрал(а) ${score} из ${total} баллов. Советуем внимательно перечитать материал и попробовать снова.`;
+            }
+            resultText.textContent = message;
+
+            // Плавный скролл к результату
+            resultBox.scrollIntoView({behavior: 'smooth', block: 'center'});
+        });
+    })();
+</script>
 
 </body>
 </html>

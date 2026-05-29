@@ -8,7 +8,8 @@
     <!-- Google Fonts (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap"
+          rel="stylesheet">
 
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -74,6 +75,7 @@
             z-index: 100;
             box-shadow: 0 2px 20px rgba(15, 36, 53, 0.25);
         }
+
         .header__inner {
             max-width: 1200px;
             margin: 0 auto;
@@ -82,11 +84,13 @@
             justify-content: space-between;
             height: 64px;
         }
+
         .header__left {
             display: flex;
             align-items: center;
             gap: 12px;
         }
+
         .header__icon {
             width: 36px;
             height: 36px;
@@ -98,6 +102,7 @@
             font-size: 18px;
             color: #c9ddf0;
         }
+
         .header__title {
             font-size: 1.05rem;
             font-weight: 600;
@@ -105,6 +110,7 @@
             letter-spacing: 0.3px;
             line-height: 1.2;
         }
+
         .header__subtitle {
             display: block;
             font-size: 0.7rem;
@@ -113,6 +119,7 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
         }
+
         .header__back {
             display: inline-flex;
             align-items: center;
@@ -127,11 +134,13 @@
             border-radius: 50px;
             white-space: nowrap;
         }
+
         .header__back:hover {
             color: #ffffff;
             border-color: rgba(255, 255, 255, 0.35);
             background: rgba(255, 255, 255, 0.05);
         }
+
         .header__back i {
             font-size: 0.8rem;
         }
@@ -157,6 +166,7 @@
             align-items: flex-start;
             gap: 20px;
         }
+
         .module-header__icon {
             width: 56px;
             height: 56px;
@@ -170,6 +180,7 @@
             flex-shrink: 0;
             margin-top: 2px;
         }
+
         .module-header__text h1 {
             font-size: 1.5rem;
             font-weight: 700;
@@ -177,6 +188,7 @@
             letter-spacing: -0.2px;
             margin-bottom: 4px;
         }
+
         .module-header__text .subtitle {
             font-size: 0.9rem;
             color: var(--text-muted);
@@ -193,9 +205,11 @@
             border: 1px solid var(--border-subtle);
             transition: box-shadow var(--transition);
         }
+
         .section-card:hover {
             box-shadow: var(--shadow-md);
         }
+
         .section-card h2 {
             font-size: 1.2rem;
             font-weight: 650;
@@ -206,12 +220,14 @@
             gap: 10px;
             letter-spacing: -0.1px;
         }
+
         .section-card h2 i {
             color: var(--primary-blue);
             font-size: 1rem;
             width: 28px;
             text-align: center;
         }
+
         .section-card h3 {
             font-size: 1rem;
             font-weight: 600;
@@ -219,6 +235,7 @@
             margin: 16px 0 8px;
             letter-spacing: -0.1px;
         }
+
         .section-card p,
         .section-card li {
             color: var(--text-medium);
@@ -226,15 +243,18 @@
             line-height: 1.65;
             margin-bottom: 6px;
         }
+
         .section-card ul {
             list-style: none;
             padding-left: 0;
         }
+
         .section-card ul li {
             position: relative;
             padding-left: 24px;
             margin-bottom: 8px;
         }
+
         .section-card ul li::before {
             content: '';
             position: absolute;
@@ -245,6 +265,7 @@
             border-radius: 50%;
             background: var(--light-blue);
         }
+
         .highlight-box {
             background: #f0f5fb;
             border-left: 4px solid var(--primary-blue);
@@ -255,6 +276,7 @@
             color: var(--dark-blue);
             font-size: 0.9rem;
         }
+
         .dialog-example {
             background: #f7f9fc;
             border-left: 3px solid var(--soft-blue);
@@ -275,6 +297,7 @@
             box-shadow: var(--shadow-md);
             border: 1px solid var(--border-subtle);
         }
+
         .test-section h2 {
             font-size: 1.25rem;
             font-weight: 700;
@@ -284,12 +307,14 @@
             align-items: center;
             gap: 10px;
         }
+
         .test-section .test-intro {
             font-size: 0.88rem;
             color: var(--text-muted);
             margin-bottom: 20px;
             font-weight: 400;
         }
+
         .question-block {
             background: #f9fbfd;
             border-radius: var(--radius-sm);
@@ -298,15 +323,18 @@
             border: 1px solid #e9eff5;
             transition: border-color 0.2s;
         }
+
         .question-block:hover {
             border-color: #cddae6;
         }
+
         .question-block p {
             font-weight: 600;
             color: var(--text-dark);
             font-size: 0.92rem;
             margin-bottom: 10px;
         }
+
         .question-block label {
             display: flex;
             align-items: center;
@@ -320,9 +348,11 @@
             margin-bottom: 4px;
             font-weight: 400;
         }
+
         .question-block label:hover {
             background: #eef3f9;
         }
+
         .question-block input[type="radio"] {
             accent-color: var(--primary-blue);
             width: 17px;
@@ -330,6 +360,7 @@
             flex-shrink: 0;
             cursor: pointer;
         }
+
         .test-btn {
             display: inline-flex;
             align-items: center;
@@ -346,10 +377,12 @@
             margin-top: 8px;
             letter-spacing: 0.2px;
         }
+
         .test-btn:hover {
             background: var(--medium-blue);
             box-shadow: var(--shadow-lg);
         }
+
         .test-btn i {
             font-size: 0.85rem;
         }
@@ -368,10 +401,12 @@
             align-items: center;
             gap: 12px;
         }
+
         .result-box i {
             font-size: 1.6rem;
             color: var(--primary-blue);
         }
+
         .result-box.visible {
             display: flex;
         }
@@ -383,6 +418,7 @@
             color: var(--footer-text);
             margin-top: auto;
         }
+
         .footer__inner {
             max-width: 1000px;
             margin: 0 auto;
@@ -393,10 +429,12 @@
             justify-content: center;
             text-align: center;
         }
+
         .footer__block {
             flex: 1 1 200px;
             min-width: 160px;
         }
+
         .footer__label {
             font-size: 0.7rem;
             font-weight: 600;
@@ -405,6 +443,7 @@
             color: #7b95b0;
             margin-bottom: 6px;
         }
+
         .footer__phone {
             display: block;
             font-size: 0.95rem;
@@ -414,14 +453,17 @@
             transition: color 0.25s;
             line-height: 1.6;
         }
+
         .footer__phone:hover {
             color: #ffffff;
         }
+
         .footer__phone i {
             margin-right: 6px;
             color: #6b8fab;
             font-size: 0.8rem;
         }
+
         .footer__bottom {
             text-align: center;
             margin-top: 18px;
@@ -438,45 +480,57 @@
                 gap: 10px;
                 justify-content: space-between;
             }
+
             .header__back {
                 font-size: 0.78rem;
                 padding: 6px 12px;
             }
+
             .header__title {
                 font-size: 0.9rem;
             }
+
             .header__subtitle {
                 font-size: 0.65rem;
             }
+
             .module-header {
                 flex-direction: column;
                 gap: 12px;
                 padding: 20px;
             }
+
             .module-header__icon {
                 width: 44px;
                 height: 44px;
                 font-size: 22px;
                 border-radius: 12px;
             }
+
             .module-header__text h1 {
                 font-size: 1.3rem;
             }
+
             .section-card {
                 padding: 18px 16px;
             }
+
             .section-card h2 {
                 font-size: 1.05rem;
             }
+
             .test-section {
                 padding: 18px 14px;
             }
+
             .question-block {
                 padding: 14px 12px;
             }
+
             .question-block label {
                 font-size: 0.82rem;
             }
+
             .test-btn {
                 width: 100%;
                 justify-content: center;
@@ -514,20 +568,30 @@
         </div>
         <div class="module-header__text">
             <h1>Поддерживающее общение</h1>
-            <p class="subtitle">Как разговаривать с человеком так, чтобы он почувствовал себя услышанным и не одиноким.</p>
+            <p class="subtitle">Как разговаривать с человеком так, чтобы он почувствовал себя услышанным и не
+                одиноким.</p>
         </div>
     </div>
 
     <!-- Введение -->
     <div class="section-card">
-        <p><strong>Поддерживающее общение</strong> — это особый вид разговора, при котором вы помогаете человеку почувствовать, что его слышат, понимают и принимают таким, какой он есть. Это не значит, что вы должны решать все его проблемы или давать умные советы. Главная задача — создать теплую и безопасную атмосферу, в которой человек может спокойно высказаться, не боясь осуждения или критики.</p>
-        <p>Такое общение особенно полезно в трудные моменты: когда друг переживает разрыв отношений, одноклассник устал от нагрузки по учебе, мама/папа беспокоится о здоровье или ребёнок не может справиться с эмоциями. Даже в обычные дни люди часто нуждаются в том, чтобы их просто выслушали. Когда человек чувствует настоящую поддержку, у него снижается уровень стресса, появляется ощущение, что он не один, и иногда даже приходят собственные решения.</p>
+        <p><strong>Поддерживающее общение</strong> — это особый вид разговора, при котором вы помогаете человеку
+            почувствовать, что его слышат, понимают и принимают таким, какой он есть. Это не значит, что вы должны
+            решать все его проблемы или давать умные советы. Главная задача — создать теплую и безопасную атмосферу, в
+            которой человек может спокойно высказаться, не боясь осуждения или критики.</p>
+        <p>Такое общение особенно полезно в трудные моменты: когда друг переживает разрыв отношений, одноклассник устал
+            от нагрузки по учебе, мама/папа беспокоится о здоровье или ребёнок не может справиться с эмоциями. Даже в
+            обычные дни люди часто нуждаются в том, чтобы их просто выслушали. Когда человек чувствует настоящую
+            поддержку, у него снижается уровень стресса, появляется ощущение, что он не один, и иногда даже приходят
+            собственные решения.</p>
     </div>
 
     <!-- Секция 1: Как начать разговор -->
     <div class="section-card">
         <h2><i class="fa-solid fa-door-open"></i> 1. Как начать разговор</h2>
-        <p>Начинать разговор нужно мягко и уважительно. Резкие или слишком прямые вопросы могут поставить человека в неловкое положение. Лучше использовать открытые вопросы, которые дают свободу говорить столько, сколько хочется.</p>
+        <p>Начинать разговор нужно мягко и уважительно. Резкие или слишком прямые вопросы могут поставить человека в
+            неловкое положение. Лучше использовать открытые вопросы, которые дают свободу говорить столько, сколько
+            хочется.</p>
         <p><strong>Примеры хороших открывающих фраз:</strong></p>
         <ul>
             <li>«Как у тебя сегодня настроение?»</li>
@@ -546,18 +610,24 @@
             <strong>Пример неудачного начала:</strong><br>
             — Что у тебя опять случилось? Выкладывай давай.
         </div>
-        <p>Важно выбирать подходящее время и место. Если человек спешит или вокруг много людей, лучше отложить разговор. Также обращайте внимание на язык тела: говорите спокойным голосом, сохраняйте открытую позу и искреннюю заинтересованность.</p>
+        <p>Важно выбирать подходящее время и место. Если человек спешит или вокруг много людей, лучше отложить разговор.
+            Также обращайте внимание на язык тела: говорите спокойным голосом, сохраняйте открытую позу и искреннюю
+            заинтересованность.</p>
     </div>
 
     <!-- Секция 2: Активное слушание -->
     <div class="section-card">
         <h2><i class="fa-solid fa-ear-listen"></i> 2. Активное слушание</h2>
-        <p><strong>Активное слушание</strong> — это основа всего поддерживающего общения. Оно означает, что вы не просто физически присутствуете, а полностью сосредоточены на человеке и стараетесь понять его чувства и смысл того, что он говорит.</p>
+        <p><strong>Активное слушание</strong> — это основа всего поддерживающего общения. Оно означает, что вы не просто
+            физически присутствуете, а полностью сосредоточены на человеке и стараетесь понять его чувства и смысл того,
+            что он говорит.</p>
         <p><strong>Что нужно делать при активном слушании:</strong></p>
         <ul>
             <li>Отложить все предметы или дела, которые могут помешать разговору (телефон, компьютер и т.д.).</li>
             <li>Смотреть в глаза, но не слишком пристально.</li>
-            <li>Кивать, улыбаться в подходящие моменты, использовать короткие поддерживающие слова: «угу», «понятно», «да», «слушаю».</li>
+            <li>Кивать, улыбаться в подходящие моменты, использовать короткие поддерживающие слова: «угу», «понятно»,
+                «да», «слушаю».
+            </li>
             <li>Делать паузы — не торопить человека.</li>
             <li>Пересказывать своими словами то, что услышали (перефразирование).</li>
             <li>Задавать мягкие уточняющие вопросы.</li>
@@ -576,7 +646,8 @@
     <!-- Секция 3: Поддерживающие фразы -->
     <div class="section-card">
         <h2><i class="fa-solid fa-heart"></i> 3. Поддерживающие фразы</h2>
-        <p>Хорошие поддерживающие фразы помогают человеку ощутить вашу заботу. Они должны быть искренними и идти от сердца.</p>
+        <p>Хорошие поддерживающие фразы помогают человеку ощутить вашу заботу. Они должны быть искренними и идти от
+            сердца.</p>
         <p><strong>Список полезных поддерживающих фраз:</strong></p>
         <ul>
             <li>«Я тебя слышу и очень хорошо понимаю»</li>
@@ -616,7 +687,8 @@
         <div class="dialog-example">
             <strong>Пример диалога с ошибками (что делать не стоит):</strong><br>
             — У меня конфликт с подругой.<br>
-            — Да забудь ты о ней! Найди себе новых друзей. У меня тоже была такая ситуация, я просто перестала общаться и всё.
+            — Да забудь ты о ней! Найди себе новых друзей. У меня тоже была такая ситуация, я просто перестала общаться
+            и всё.
         </div>
         <div class="dialog-example">
             <strong>Пример правильного диалога (без ошибок):</strong><br>
@@ -625,8 +697,11 @@
             — …<br>
             — Мне жаль, что тебе сейчас так больно. Твои чувства нормальны. Я с тобой.
         </div>
-        <p>Поддерживающее общение — это навык, который приходит с практикой. Не переживайте, если сначала будет получаться неидеально. Главное — ваша искренность и желание помочь человеку почувствовать себя лучше.</p>
-        <p><strong>Поддерживающее общение — это когда человек после разговора с вами чувствует, что его услышали, поняли и ему стало немного легче. Это не про то, чтобы «починить» проблему собеседника, а про то, чтобы быть рядом и показать: «Ты не один».</strong></p>
+        <p>Поддерживающее общение — это навык, который приходит с практикой. Не переживайте, если сначала будет
+            получаться неидеально. Главное — ваша искренность и желание помочь человеку почувствовать себя лучше.</p>
+        <p><strong>Поддерживающее общение — это когда человек после разговора с вами чувствует, что его услышали, поняли
+            и ему стало немного легче. Это не про то, чтобы «починить» проблему собеседника, а про то, чтобы быть рядом
+            и показать: «Ты не один».</strong></p>
     </div>
 
     <!-- ==================== ТЕСТ ==================== -->
@@ -638,8 +713,10 @@
             <!-- Вопрос 1 -->
             <div class="question-block">
                 <p>1. Что такое поддерживающее общение?</p>
-                <label><input type="radio" name="q1" value="А"> А) Это когда ты быстро решаешь проблему за человека</label>
-                <label><input type="radio" name="q1" value="Б"> Б) Это когда человек после разговора чувствует, что его услышали и поняли</label>
+                <label><input type="radio" name="q1" value="А"> А) Это когда ты быстро решаешь проблему за
+                    человека</label>
+                <label><input type="radio" name="q1" value="Б"> Б) Это когда человек после разговора чувствует, что его
+                    услышали и поняли</label>
                 <label><input type="radio" name="q1" value="В"> В) Это обычный светский разговор</label>
                 <label><input type="radio" name="q1" value="Г"> Г) Это когда ты делишься своими историями</label>
             </div>
@@ -647,9 +724,11 @@
             <!-- Вопрос 2 -->
             <div class="question-block">
                 <p>2. Как лучше всего начинать поддерживающий разговор?</p>
-                <label><input type="radio" name="q2" value="А"> А) Задать открытый вопрос, например: «Как у тебя сегодня настроение?»</label>
+                <label><input type="radio" name="q2" value="А"> А) Задать открытый вопрос, например: «Как у тебя сегодня
+                    настроение?»</label>
                 <label><input type="radio" name="q2" value="Б"> Б) Сразу сказать «Всё будет хорошо»</label>
-                <label><input type="radio" name="q2" value="В"> В) Начинать с вопроса «Что у тебя опять случилось?»</label>
+                <label><input type="radio" name="q2" value="В"> В) Начинать с вопроса «Что у тебя опять
+                    случилось?»</label>
                 <label><input type="radio" name="q2" value="Г"> Г) Сразу давать советы</label>
             </div>
 
@@ -666,8 +745,10 @@
             <div class="question-block">
                 <p>4. Что такое активное слушание?</p>
                 <label><input type="radio" name="q4" value="А"> А) Когда ты молча слушаешь без эмоций</label>
-                <label><input type="radio" name="q4" value="Б"> Б) Когда ты сосредоточен на человеке, киваешь и перефразируешь</label>
-                <label><input type="radio" name="q4" value="В"> В) Когда ты постоянно думаешь, что сказать в ответ</label>
+                <label><input type="radio" name="q4" value="Б"> Б) Когда ты сосредоточен на человеке, киваешь и
+                    перефразируешь</label>
+                <label><input type="radio" name="q4" value="В"> В) Когда ты постоянно думаешь, что сказать в
+                    ответ</label>
                 <label><input type="radio" name="q4" value="Г"> Г) Когда ты часто перебиваешь</label>
             </div>
 
@@ -676,7 +757,8 @@
                 <p>5. Какая фраза лучше всего показывает, что вы слушаете?</p>
                 <label><input type="radio" name="q5" value="А"> А) «Да ладно, бывает и хуже»</label>
                 <label><input type="radio" name="q5" value="Б"> Б) «У меня тоже было так же»</label>
-                <label><input type="radio" name="q5" value="В"> В) «То есть ты чувствуешь обиду, я правильно понял?»</label>
+                <label><input type="radio" name="q5" value="В"> В) «То есть ты чувствуешь обиду, я правильно
+                    понял?»</label>
                 <label><input type="radio" name="q5" value="Г"> Г) «Не думай об этом»</label>
             </div>
 
@@ -702,7 +784,8 @@
             <div class="question-block">
                 <p>8. Что лучше сделать, если хочется дать совет?</p>
                 <label><input type="radio" name="q8" value="А"> А) Сразу его сказать</label>
-                <label><input type="radio" name="q8" value="Б"> Б) Спросить: «Хочешь услышать моё мнение или пока просто послушать?»</label>
+                <label><input type="radio" name="q8" value="Б"> Б) Спросить: «Хочешь услышать моё мнение или пока просто
+                    послушать?»</label>
                 <label><input type="radio" name="q8" value="В"> В) Сказать «Всё наладится»</label>
                 <label><input type="radio" name="q8" value="Г"> Г) Перебить и рассказать свой опыт</label>
             </div>
@@ -711,7 +794,8 @@
             <div class="question-block">
                 <p>9. Почему важно избегать обесценивающих фраз?</p>
                 <label><input type="radio" name="q9" value="А"> А) Они слишком длинные</label>
-                <label><input type="radio" name="q9" value="Б"> Б) Они могут заставить человека почувствовать, что его эмоции не важны</label>
+                <label><input type="radio" name="q9" value="Б"> Б) Они могут заставить человека почувствовать, что его
+                    эмоции не важны</label>
                 <label><input type="radio" name="q9" value="В"> В) Они звучат слишком официально</label>
                 <label><input type="radio" name="q9" value="Г"> Г) Они слишком короткие</label>
             </div>
@@ -722,7 +806,8 @@
                 <label><input type="radio" name="q10" value="А"> А) Когда его часто перебивают</label>
                 <label><input type="radio" name="q10" value="Б"> Б) Когда быстро дают советы</label>
                 <label><input type="radio" name="q10" value="В"> В) Когда разговор переводят на другие темы</label>
-                <label><input type="radio" name="q10" value="Г"> Г) Когда он чувствует искреннее внимание и отсутствие осуждения</label>
+                <label><input type="radio" name="q10" value="Г"> Г) Когда он чувствует искреннее внимание и отсутствие
+                    осуждения</label>
             </div>
 
             <button type="button" class="test-btn" id="submitTest">
@@ -743,16 +828,25 @@
 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__block">
-            <p class="footer__label">Горячая линия</p>
-            <a href="tel:88000000000" class="footer__phone"><i class="fa-solid fa-phone"></i> 8-800-000-00-00</a>
+            <p class="footer__label">Психологическая служба КФУ</p>
+            <p class="footer__label">(Телефон доверия)</p>
+            <a class="footer__phone">
+                <i class="fa-solid fa-phone"></i> 8-800-600-8996
+            </a>
         </div>
         <div class="footer__block">
-            <p class="footer__label">Телефон доверия</p>
-            <a href="tel:88001111111" class="footer__phone"><i class="fa-solid fa-phone"></i> 8-800-111-11-11</a>
+            <p class="footer__label">Психологическая служба Сердэш</p>
+            <p class="footer__label">(Бесплатная консультация психолога для подростков)</p>
+            <a class="footer__phone">
+                <i class="fa-solid fa-phone"></i> 8-843-598-33-73
+            </a>
         </div>
         <div class="footer__block">
-            <p class="footer__label">Экстренная помощь</p>
-            <a href="tel:+70000000000" class="footer__phone"><i class="fa-solid fa-phone"></i> +7 (000) 000-00-00</a>
+            <p class="footer__label">Единый общероссийский номер</p>
+            <p class="footer__label">(работает бесплатно со всех мобильных операторов)</p>
+            <a class="footer__phone">
+                <i class="fa-solid fa-phone"></i> 8-800-2000-122
+            </a>
         </div>
     </div>
     <p class="footer__bottom">Если вам нужна помощь — не оставайтесь одни. Позвоните по одному из номеров выше.</p>
@@ -760,7 +854,7 @@
 
 <!-- ==================== JS: Логика теста ==================== -->
 <script>
-    (function() {
+    (function () {
         // Правильные ответы (ключ — буква варианта)
         const correctAnswers = {
             q1: 'Б',
@@ -780,7 +874,7 @@
         const resultText = document.getElementById('resultText');
         const quizForm = document.getElementById('quizForm');
 
-        submitBtn.addEventListener('click', function() {
+        submitBtn.addEventListener('click', function () {
             let score = 0;
             const total = Object.keys(correctAnswers).length;
             let allAnswered = true;
@@ -833,7 +927,7 @@
             resultText.textContent = message;
 
             // Плавный скролл к результату
-            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            resultBox.scrollIntoView({behavior: 'smooth', block: 'center'});
         });
     })();
 </script>

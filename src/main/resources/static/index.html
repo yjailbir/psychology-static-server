@@ -8,7 +8,8 @@
     <!-- Подключаем шрифт Inter с кириллицей -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap"
+          rel="stylesheet">
 
     <!-- Font Awesome 6 для иконок -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -142,6 +143,7 @@
             pointer-events: none;
             opacity: 0.35;
         }
+
         .hero__decor--1 {
             width: 220px;
             height: 220px;
@@ -150,6 +152,7 @@
             left: -40px;
             animation: floatDecor 12s ease-in-out infinite;
         }
+
         .hero__decor--2 {
             width: 160px;
             height: 160px;
@@ -158,6 +161,7 @@
             right: -20px;
             animation: floatDecor 15s ease-in-out infinite reverse;
         }
+
         .hero__decor--3 {
             width: 100px;
             height: 100px;
@@ -293,15 +297,19 @@
         .module-card--1::before {
             background: #5b9cc9;
         }
+
         .module-card--2::before {
             background: #4d8ab8;
         }
+
         .module-card--3::before {
             background: #6aa3cc;
         }
+
         .module-card--4::before {
             background: #3f7aa8;
         }
+
         .module-card--5::before {
             background: #568eb5;
         }
@@ -311,6 +319,7 @@
             box-shadow: var(--shadow-xl);
             border-color: #cddbe8;
         }
+
         .module-card:hover::before {
             height: 6px;
             opacity: 1;
@@ -344,18 +353,22 @@
             background: #e6f0f8;
             color: #3e7aab;
         }
+
         .module-card--2 .module-card__icon-wrap {
             background: #e3edf5;
             color: #3b6f9e;
         }
+
         .module-card--3 .module-card__icon-wrap {
             background: #e9f2f9;
             color: #4a82b0;
         }
+
         .module-card--4 .module-card__icon-wrap {
             background: #dce9f3;
             color: #356594;
         }
+
         .module-card--5 .module-card__icon-wrap {
             background: #e4eef6;
             color: #4278a5;
@@ -407,6 +420,7 @@
             gap: 11px;
             color: var(--medium-blue);
         }
+
         .module-card:hover .module-card__arrow i {
             transform: translateX(3px);
         }
@@ -453,9 +467,11 @@
             transition: color 0.25s;
             line-height: 1.6;
         }
+
         .footer__phone:hover {
             color: #ffffff;
         }
+
         .footer__phone i {
             margin-right: 7px;
             color: #6b8fab;
@@ -476,6 +492,7 @@
             transform: translateY(30px);
             transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+
         .fade-in-up.visible {
             opacity: 1;
             transform: translateY(0);
@@ -485,15 +502,19 @@
         .module-card:nth-child(1) {
             transition-delay: 0s;
         }
+
         .module-card:nth-child(2) {
             transition-delay: 0.08s;
         }
+
         .module-card:nth-child(3) {
             transition-delay: 0.16s;
         }
+
         .module-card:nth-child(4) {
             transition-delay: 0.24s;
         }
+
         .module-card:nth-child(5) {
             transition-delay: 0.32s;
         }
@@ -503,23 +524,29 @@
             .hero__title {
                 font-size: 1.9rem;
             }
+
             .hero__description {
                 font-size: 0.98rem;
             }
+
             .modules-section__heading {
                 font-size: 1.45rem;
             }
+
             .module-card {
                 flex: 1 1 280px;
                 max-width: 100%;
                 padding: 22px 20px 20px;
             }
+
             .module-card__title {
                 font-size: 1.05rem;
             }
+
             .header__title {
                 font-size: 1.1rem;
             }
+
             .header__subtitle {
                 font-size: 0.7rem;
             }
@@ -530,40 +557,51 @@
                 height: 56px;
                 gap: 10px;
             }
+
             .header__icon {
                 width: 32px;
                 height: 32px;
                 font-size: 16px;
             }
+
             .header__title {
                 font-size: 0.95rem;
             }
+
             .header__subtitle {
                 font-size: 0.66rem;
             }
+
             .hero {
                 padding: 36px 18px 32px;
             }
+
             .hero__title {
                 font-size: 1.55rem;
             }
+
             .hero__description {
                 font-size: 0.9rem;
             }
+
             .hero__badge {
                 font-size: 0.7rem;
                 padding: 5px 14px;
             }
+
             .modules-section {
                 padding: 28px 14px 40px;
             }
+
             .modules-section__heading {
                 font-size: 1.25rem;
                 margin-bottom: 22px;
             }
+
             .modules-grid {
                 gap: 14px;
             }
+
             .module-card {
                 flex: 1 1 100%;
                 max-width: 100%;
@@ -571,6 +609,7 @@
                 padding: 18px 16px 16px;
                 border-radius: var(--radius-md);
             }
+
             .module-card__icon-wrap {
                 width: 40px;
                 height: 40px;
@@ -578,24 +617,30 @@
                 border-radius: 10px;
                 margin-bottom: 10px;
             }
+
             .module-card__title {
                 font-size: 1rem;
             }
+
             .module-card__desc {
                 font-size: 0.82rem;
             }
+
             .module-card__arrow {
                 font-size: 0.8rem;
             }
+
             .footer__inner {
                 flex-direction: column;
                 align-items: center;
                 gap: 18px;
             }
+
             .footer__block {
                 flex: unset;
                 width: 100%;
             }
+
             .footer__phone {
                 font-size: 0.95rem;
             }
@@ -605,9 +650,11 @@
             .hero__title {
                 font-size: 1.3rem;
             }
+
             .header__title {
                 font-size: 0.85rem;
             }
+
             .header__subtitle {
                 font-size: 0.6rem;
             }
@@ -616,164 +663,177 @@
 </head>
 <body>
 
-    <!-- ==================== HEADER ==================== -->
-    <header class="header">
-        <div class="header__inner">
-            <div class="header__icon" aria-hidden="true">
-                <i class="fa-solid fa-heart-pulse"></i>
-            </div>
-            <div>
-                <span class="header__title">Первая психологическая помощь</span>
-                <span class="header__subtitle">Цифровой образовательный ресурс</span>
-            </div>
+<!-- ==================== HEADER ==================== -->
+<header class="header">
+    <div class="header__inner">
+        <div class="header__icon" aria-hidden="true">
+            <i class="fa-solid fa-heart-pulse"></i>
         </div>
-    </header>
-
-    <!-- ==================== HERO ==================== -->
-    <section class="hero">
-        <div class="hero__decor hero__decor--1" aria-hidden="true"></div>
-        <div class="hero__decor hero__decor--2" aria-hidden="true"></div>
-        <div class="hero__decor hero__decor--3" aria-hidden="true"></div>
-        <div class="hero__content">
-            <span class="hero__badge">📘 Обучение</span>
-            <h1 class="hero__title">Цифровой ресурс для обучения основам первой психологической помощи</h1>
-            <p class="hero__description">
-                Пять модулей, которые помогут вам научиться&nbsp;распознавать эмоциональные трудности,
-                оказывать поддержку близким и&nbsp;заботиться о&nbsp;собственном благополучии.
-            </p>
+        <div>
+            <span class="header__title">Первая психологическая помощь</span>
+            <span class="header__subtitle">Цифровой образовательный ресурс</span>
         </div>
-    </section>
+    </div>
+</header>
 
-    <!-- ==================== MODULES ==================== -->
-    <main class="modules-section">
-        <p class="modules-section__label">Выберите модуль</p>
-        <h2 class="modules-section__heading">Учебные модули</h2>
-        <div class="modules-grid" id="modulesGrid">
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+    <div class="hero__decor hero__decor--1" aria-hidden="true"></div>
+    <div class="hero__decor hero__decor--2" aria-hidden="true"></div>
+    <div class="hero__decor hero__decor--3" aria-hidden="true"></div>
+    <div class="hero__content">
+        <span class="hero__badge">📘 Обучение</span>
+        <h1 class="hero__title">Цифровой ресурс для обучения основам первой психологической помощи</h1>
+        <p class="hero__description">
+            Пять модулей, которые помогут вам научиться&nbsp;распознавать эмоциональные трудности,
+            оказывать поддержку близким и&nbsp;заботиться о&nbsp;собственном благополучии.
+        </p>
+    </div>
+</section>
 
-            <!-- Модуль 1 -->
-            <a href="module_1.html" class="module-card module-card--1 fade-in-up" aria-label="Модуль 1: Твоя безопасность и обращение за помощью">
-                <div class="module-card__icon-wrap" aria-hidden="true">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <span class="module-card__number">Модуль 1</span>
-                <h3 class="module-card__title">Твоя безопасность и обращение за помощью</h3>
-                <p class="module-card__desc">Как обеспечить личную безопасность, распознать кризисную ситуацию и найти надёжные источники поддержки.</p>
-                <span class="module-card__arrow">Перейти к модулю <i class="fa-solid fa-arrow-right"></i></span>
+<!-- ==================== MODULES ==================== -->
+<main class="modules-section">
+    <p class="modules-section__label">Выберите модуль</p>
+    <h2 class="modules-section__heading">Учебные модули</h2>
+    <div class="modules-grid" id="modulesGrid">
+
+        <!-- Модуль 1 -->
+        <a href="module_1.html" class="module-card module-card--1 fade-in-up"
+           aria-label="Модуль 1: Твоя безопасность и обращение за помощью">
+            <div class="module-card__icon-wrap" aria-hidden="true">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <span class="module-card__number">Модуль 1</span>
+            <h3 class="module-card__title">Твоя безопасность и обращение за помощью</h3>
+            <p class="module-card__desc">Как обеспечить личную безопасность, распознать кризисную ситуацию и найти
+                надёжные источники поддержки.</p>
+            <span class="module-card__arrow">Перейти к модулю <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- Модуль 2 -->
+        <a href="module_2.html" class="module-card module-card--2 fade-in-up"
+           aria-label="Модуль 2: Понимание эмоций и стресса">
+            <div class="module-card__icon-wrap" aria-hidden="true">
+                <i class="fa-solid fa-brain"></i>
+            </div>
+            <span class="module-card__number">Модуль 2</span>
+            <h3 class="module-card__title">Понимание эмоций и стресса</h3>
+            <p class="module-card__desc">Изучите природу эмоций, механизмы стресса и научитесь распознавать их
+                проявления у себя и окружающих.</p>
+            <span class="module-card__arrow">Перейти к модулю <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- Модуль 3 -->
+        <a href="module_3.html" class="module-card module-card--3 fade-in-up"
+           aria-label="Модуль 3: Поддерживающее общение">
+            <div class="module-card__icon-wrap" aria-hidden="true">
+                <i class="fa-solid fa-comments"></i>
+            </div>
+            <span class="module-card__number">Модуль 3</span>
+            <h3 class="module-card__title">Поддерживающее общение</h3>
+            <p class="module-card__desc">Освойте техники активного слушания, эмпатичного диалога и бережной обратной
+                связи.</p>
+            <span class="module-card__arrow">Перейти к модулю <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- Модуль 4 -->
+        <a href="module_4.html" class="module-card module-card--4 fade-in-up"
+           aria-label="Модуль 4: Помощь в трудных ситуациях">
+            <div class="module-card__icon-wrap" aria-hidden="true">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+            </div>
+            <span class="module-card__number">Модуль 4</span>
+            <h3 class="module-card__title">Помощь в трудных ситуациях</h3>
+            <p class="module-card__desc">Практические алгоритмы помощи при острых эмоциональных состояниях, панике и
+                кризисных реакциях.</p>
+            <span class="module-card__arrow">Перейти к модулю <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- Модуль 5 -->
+        <a href="module_5.html" class="module-card module-card--5 fade-in-up"
+           aria-label="Модуль 5: Границы и забота о себе">
+            <div class="module-card__icon-wrap" aria-hidden="true">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <span class="module-card__number">Модуль 5</span>
+            <h3 class="module-card__title">Границы и забота о себе</h3>
+            <p class="module-card__desc">Как выстраивать здоровые границы, избегать выгорания и сохранять внутренний
+                ресурс, помогая другим.</p>
+            <span class="module-card__arrow">Перейти к модулю <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+    </div>
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__block">
+            <p class="footer__label">Психологическая служба КФУ</p>
+            <p class="footer__label">(Телефон доверия)</p>
+            <a class="footer__phone">
+                <i class="fa-solid fa-phone"></i> 8-800-600-8996
             </a>
-
-            <!-- Модуль 2 -->
-            <a href="module_2.html" class="module-card module-card--2 fade-in-up" aria-label="Модуль 2: Понимание эмоций и стресса">
-                <div class="module-card__icon-wrap" aria-hidden="true">
-                    <i class="fa-solid fa-brain"></i>
-                </div>
-                <span class="module-card__number">Модуль 2</span>
-                <h3 class="module-card__title">Понимание эмоций и стресса</h3>
-                <p class="module-card__desc">Изучите природу эмоций, механизмы стресса и научитесь распознавать их проявления у себя и окружающих.</p>
-                <span class="module-card__arrow">Перейти к модулю <i class="fa-solid fa-arrow-right"></i></span>
-            </a>
-
-            <!-- Модуль 3 -->
-            <a href="module_3.html" class="module-card module-card--3 fade-in-up" aria-label="Модуль 3: Поддерживающее общение">
-                <div class="module-card__icon-wrap" aria-hidden="true">
-                    <i class="fa-solid fa-comments"></i>
-                </div>
-                <span class="module-card__number">Модуль 3</span>
-                <h3 class="module-card__title">Поддерживающее общение</h3>
-                <p class="module-card__desc">Освойте техники активного слушания, эмпатичного диалога и бережной обратной связи.</p>
-                <span class="module-card__arrow">Перейти к модулю <i class="fa-solid fa-arrow-right"></i></span>
-            </a>
-
-            <!-- Модуль 4 -->
-            <a href="module_4.html" class="module-card module-card--4 fade-in-up" aria-label="Модуль 4: Помощь в трудных ситуациях">
-                <div class="module-card__icon-wrap" aria-hidden="true">
-                    <i class="fa-solid fa-hand-holding-heart"></i>
-                </div>
-                <span class="module-card__number">Модуль 4</span>
-                <h3 class="module-card__title">Помощь в трудных ситуациях</h3>
-                <p class="module-card__desc">Практические алгоритмы помощи при острых эмоциональных состояниях, панике и кризисных реакциях.</p>
-                <span class="module-card__arrow">Перейти к модулю <i class="fa-solid fa-arrow-right"></i></span>
-            </a>
-
-            <!-- Модуль 5 -->
-            <a href="module_5.html" class="module-card module-card--5 fade-in-up" aria-label="Модуль 5: Границы и забота о себе">
-                <div class="module-card__icon-wrap" aria-hidden="true">
-                    <i class="fa-solid fa-circle-check"></i>
-                </div>
-                <span class="module-card__number">Модуль 5</span>
-                <h3 class="module-card__title">Границы и забота о себе</h3>
-                <p class="module-card__desc">Как выстраивать здоровые границы, избегать выгорания и сохранять внутренний ресурс, помогая другим.</p>
-                <span class="module-card__arrow">Перейти к модулю <i class="fa-solid fa-arrow-right"></i></span>
-            </a>
-
         </div>
-    </main>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="footer">
-        <div class="footer__inner">
-            <div class="footer__block">
-                <p class="footer__label">Горячая линия</p>
-                <a href="tel:88000000000" class="footer__phone">
-                    <i class="fa-solid fa-phone"></i> 8-800-000-00-00
-                </a>
-            </div>
-            <div class="footer__block">
-                <p class="footer__label">Телефон доверия</p>
-                <a href="tel:88001111111" class="footer__phone">
-                    <i class="fa-solid fa-phone"></i> 8-800-111-11-11
-                </a>
-            </div>
-            <div class="footer__block">
-                <p class="footer__label">Экстренная помощь</p>
-                <a href="tel:+70000000000" class="footer__phone">
-                    <i class="fa-solid fa-phone"></i> +7 (000) 000-00-00
-                </a>
-            </div>
+        <div class="footer__block">
+            <p class="footer__label">Психологическая служба Сердэш</p>
+            <p class="footer__label">(Бесплатная консультация психолога для подростков)</p>
+            <a class="footer__phone">
+                <i class="fa-solid fa-phone"></i> 8-843-598-33-73
+            </a>
         </div>
-        <p class="footer__bottom">Если вам нужна помощь — не оставайтесь одни. Позвоните по одному из номеров выше.</p>
-    </footer>
+        <div class="footer__block">
+            <p class="footer__label">Единый общероссийский номер</p>
+            <p class="footer__label">(работает бесплатно со всех мобильных операторов)</p>
+            <a class="footer__phone">
+                <i class="fa-solid fa-phone"></i> 8-800-2000-122
+            </a>
+        </div>
+    </div>
+    <p class="footer__bottom">Если вам нужна помощь — не оставайтесь одни. Позвоните по одному из номеров выше.</p>
+</footer>
 
-    <!-- ==================== JS: Анимация появления карточек ==================== -->
-    <script>
-        (function() {
-            // Intersection Observer — плавное появление карточек при скролле
-            const cards = document.querySelectorAll('.fade-in-up');
+<!-- ==================== JS: Анимация появления карточек ==================== -->
+<script>
+    (function () {
+        // Intersection Observer — плавное появление карточек при скролле
+        const cards = document.querySelectorAll('.fade-in-up');
 
-            if ('IntersectionObserver' in window) {
-                const observerOptions = {
-                    root: null,
-                    rootMargin: '0px 0px -30px 0px',
-                    threshold: 0.12,
-                };
+        if ('IntersectionObserver' in window) {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -30px 0px',
+                threshold: 0.12,
+            };
 
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, observerOptions);
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
 
-                cards.forEach((card) => observer.observe(card));
-            } else {
-                // Фолбэк для старых браузеров — просто показываем сразу
-                cards.forEach((card) => card.classList.add('visible'));
-            }
+            cards.forEach((card) => observer.observe(card));
+        } else {
+            // Фолбэк для старых браузеров — просто показываем сразу
+            cards.forEach((card) => card.classList.add('visible'));
+        }
 
-            // Небольшая задержка для hero-анимации при загрузке
-            const heroContent = document.querySelector('.hero__content');
-            if (heroContent) {
-                heroContent.style.opacity = '0';
-                heroContent.style.transform = 'translateY(20px)';
-                heroContent.style.transition = 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-                setTimeout(() => {
-                    heroContent.style.opacity = '1';
-                    heroContent.style.transform = 'translateY(0)';
-                }, 150);
-            }
-        })();
-    </script>
+        // Небольшая задержка для hero-анимации при загрузке
+        const heroContent = document.querySelector('.hero__content');
+        if (heroContent) {
+            heroContent.style.opacity = '0';
+            heroContent.style.transform = 'translateY(20px)';
+            heroContent.style.transition = 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            setTimeout(() => {
+                heroContent.style.opacity = '1';
+                heroContent.style.transform = 'translateY(0)';
+            }, 150);
+        }
+    })();
+</script>
 
 </body>
 </html>
